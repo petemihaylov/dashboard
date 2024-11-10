@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { Loading } from './shared';
 
 const Home = lazy(() =>
   import('./pages').then((module) => ({
@@ -10,7 +9,7 @@ const Home = lazy(() =>
 
 const Router = () => (
   <HashRouter>
-    <Suspense fallback={<Loading />}>
+    <Suspense>
       <Routes>
         <Route path="/" element={<Home />} />
 

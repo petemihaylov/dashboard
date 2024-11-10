@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import { storeManager } from './shared/store/store';
+import { storeManager } from './store/store';
 import Router from './Router';
 
 const App = () => (

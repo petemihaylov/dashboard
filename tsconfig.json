@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
     "jsx": "react-jsx",
-    "composite": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
+    "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "typeRoots": [
       "node_modules/@types",
       "src/@types"
@@ -18,7 +20,13 @@
     ],
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
       ]
     }
   },
