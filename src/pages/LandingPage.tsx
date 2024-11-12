@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { Header } from '../components/Header';
-import { HeroSection } from '../components/HeroSection';
-import { ServicesSection } from '../components/ServicesSection';
-import { GallerySection } from '../components/GallerySection';
-import { TestimonialsSection } from '../components/TestimonialsSection';
-import { ContactSection } from '../components/ContactSection';
-import { Footer } from '../components/Footer';
+import React, { useState, useEffect } from "react";
+import { Header } from "../components/Header";
+import { HeroSection } from "../components/HeroSection";
+import { ServicesSection } from "../components/ServicesSection";
+import { GallerySection } from "../components/GallerySection";
+import { TestimonialsSection } from "../components/TestimonialsSection";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/Footer";
 
 const services = [
   {
-    title: 'DIVING COURSES',
-    description: 'CMAS and PADI diving courses for all levels.',
-    link: '#',
+    title: "DIVING COURSES",
+    description: "CMAS and PADI diving courses for all levels.",
+    link: "#",
   },
   // More services...
 ];
 
 const testimonials = [
-  { text: 'Amazing experience!', author: 'John Doe', rating: 5 },
+  { text: "Amazing experience!", author: "John Doe", rating: 5 },
   // More testimonials...
 ];
 
-const galleryImages = Array(16).fill('/placeholder.svg?height=300&width=400');
+const galleryImages = Array(16).fill("/placeholder.svg?height=300&width=400");
 
 export const LandingPage: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 0);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

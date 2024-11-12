@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { Button } from './ui/button';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Button } from "./ui/button";
 
 type Testimonial = {
   text: string;
@@ -50,8 +50,8 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                 <Star
                   className={`h-6 w-6 ${
                     i < testimonials[currentTestimonial].rating
-                      ? 'text-yellow-400 fill-current'
-                      : 'text-gray-300'
+                      ? "text-yellow-400 fill-current"
+                      : "text-gray-300"
                   }`}
                 />
               ))}

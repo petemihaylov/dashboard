@@ -1,7 +1,7 @@
-import { Action, Reducer, combineReducers } from 'redux';
-import { RootState } from '.';
-import { resetStore } from './actions';
-import appReducers from './app/app';
+import { Action, Reducer, combineReducers } from "redux";
+import { RootState } from ".";
+import { resetStore } from "./actions";
+import appReducers from "./app/app";
 
 export const combinedReducer = combineReducers({
   app: appReducers,

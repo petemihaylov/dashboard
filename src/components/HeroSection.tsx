@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from './ui/button';
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 export const HeroSection: React.FC = () => (
   <motion.section
