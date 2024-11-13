@@ -4,7 +4,6 @@ import ServicesSection from "./content/ServicesSection";
 import GallerySection from "./content/GallerySection";
 import TestimonialsSection from "./content/TestimonialsSection";
 import ContactSection from "./content/ContactSection";
-import AboutUsSection from "./content/AboutUsSection";
 
 const services = [
   {
@@ -51,7 +50,6 @@ const LandingPage = () => (
   <>
     <HeroSection />
     <ServicesSection services={services} />
-    <AboutUsSection />
     <GallerySection images={galleryImages} />
     <TestimonialsSection testimonials={testimonials} />
     <ContactSection />
