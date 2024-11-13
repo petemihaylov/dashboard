@@ -19,6 +19,12 @@ const AboutPage = lazy(() =>
   }))
 );
 
+const ServicesPage = lazy(() =>
+  import("./pages").then((module) => ({
+    default: module.ServicesPage,
+  }))
+);
+
 const Router = () => (
   <BrowserRouter>
     <Suspense>
@@ -26,6 +32,7 @@ const Router = () => (
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
