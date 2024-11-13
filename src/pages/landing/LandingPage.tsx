@@ -11,7 +11,7 @@ const services = [
     description:
       "Learn to dive with certified CMAS and PADI instructors. Courses available for beginners to advanced divers, including specialties such as wreck diving and underwater photography.",
     link: "/services",
-    image: "/images/04.jpg", // Image path for rendering
+    image: "./src/assets/images/04.jpg", // Image path for rendering
     duration: "Varies (1-5 days)", // Optional: Duration of the service
     // requirements: "Advanced diving certification required", // Optional: Specific requirements
   },
@@ -20,7 +20,7 @@ const services = [
     description:
       "Enjoy an adventurous day dive with experienced guides. Includes speed boat rides, tanks, weights, and equipment rental options. Suitable for certified divers.",
     link: "/services/day-dive",
-    image: "/images/09.jpg",
+    image: "./src/assets/images/09.jpg",
     duration: "Half day (4-6 hours)", // Optional: Duration of the service
     // requirements: "Advanced diving certification required", // Optional: Specific requirements
   },
@@ -29,7 +29,7 @@ const services = [
     description:
       "Relax on a scenic boat trip along the coastline. Ideal for non-divers and families, with opportunities for snorkeling, swimming, and enjoying the beautiful marine environment.",
     link: "/services",
-    image: "/images/07.jpg",
+    image: "./src/assets/images/07.jpg",
     duration: "3-4 hours", // Optional: Duration of the service
     // requirements: "Advanced diving certification required", // Optional: Specific requirements
   },
@@ -43,7 +43,7 @@ const testimonials = [
 const galleryImages = Array.from(
   { length: 8 },
   (_, i) =>
-    `/src/assets/images/${String(i + 1).padStart(2, "0")}.jpg?height=300&width=400`
+    `./src/assets/images/${String(i + 1).padStart(2, "0")}.jpg?height=300&width=400`
 );
 
 const LandingPage = () => (
