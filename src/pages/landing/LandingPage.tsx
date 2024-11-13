@@ -50,7 +50,6 @@ const LandingPage = () => (
   <>
     <HeroSection />
     <ServicesSection services={services} />
-    <AboutUsSection />
     <GallerySection images={galleryImages} />
     <TestimonialsSection testimonials={testimonials} />
     <ContactSection />
