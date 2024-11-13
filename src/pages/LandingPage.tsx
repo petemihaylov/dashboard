@@ -21,7 +21,10 @@ const testimonials = [
   // More testimonials...
 ];
 
-const galleryImages = Array(16).fill('/placeholder.svg?height=300&width=400');
+const galleryImages = Array.from(
+  { length: 8 },
+  (_, i) => `/images/${String(i + 1).padStart(2, '0')}.jpg?height=300&width=400`
+);
 
 export const LandingPage: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

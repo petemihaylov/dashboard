@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => (
     transition={{ duration: 1 }}
   >
     <img
-      src="/placeholder.svg?height=1080&width=1920"
+      src="images/background.jpeg?height=1080&width=1920"
       alt="Hero background"
       className="absolute inset-0 object-cover w-full h-full"
     />
