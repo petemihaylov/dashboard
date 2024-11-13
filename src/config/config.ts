@@ -1,5 +1,14 @@
 import { z } from "zod";
-import appConfigJson from "./config.app.json";
+
+const appConfigJson = {
+  app: {
+    name: "Diving Center Arapya",
+    icon: {
+      light: "./svgs/app-icon-light.svg",
+      dark: "./svgs/app-icon-dark.svg",
+    },
+  },
+};
 
 const config = z
   .object({

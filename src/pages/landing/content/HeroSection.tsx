@@ -10,7 +10,7 @@ const HeroSection = () => (
     transition={{ duration: 1 }}
   >
     <img
-      src="images/background.jpeg?height=1080&width=1920"
+      src="src/assets/images/background.jpeg?height=1080&width=1920"
       alt="Hero background"
       className="absolute inset-0 object-cover w-full h-full"
     />

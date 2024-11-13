@@ -4,10 +4,14 @@ import sprintf from "i18next-sprintf-postprocessor";
 import { initReactI18next } from "react-i18next";
 import { en, enMetadata } from "./locales/en";
 import { nl } from "./locales/nl";
+import { ru } from "./locales/ru";
+import { bg } from "./locales/bg";
 
 const resources = {
   en,
   nl,
+  bg,
+  ru,
 };
 
 i18n

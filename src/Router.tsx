@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const Layout = lazy(() =>
-  import("./layout").then((module) => ({
+  import("./common").then((module) => ({
     default: module.Layout,
   }))
 );
