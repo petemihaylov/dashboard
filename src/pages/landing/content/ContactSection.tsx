@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+import { Button } from "../../../components/Button";
+import { Input } from "../../../components/Input";
+import { Textarea } from "../../../components/Textarea";
 
-export const ContactSection: React.FC = () => (
+const ContactSection = () => (
   <section id="contact" className="py-24">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
@@ -26,3 +26,5 @@ export const ContactSection: React.FC = () => (
     </div>
   </section>
 );
+
+export default ContactSection;

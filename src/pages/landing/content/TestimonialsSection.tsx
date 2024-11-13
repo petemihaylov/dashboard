@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/Button";
 
 type Testimonial = {
   text: string;
@@ -9,13 +9,11 @@ type Testimonial = {
   rating: number;
 };
 
-type TestimonialsSectionProps = {
+interface Props {
   testimonials: Testimonial[];
-};
+}
 
-export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
-  testimonials,
-}) => {
+const TestimonialsSection = ({ testimonials }: Props) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   return (
@@ -78,3 +76,5 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
     </section>
   );
 };
+
+export default TestimonialsSection;

@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/Button";
 
-export const HeroSection: React.FC = () => (
+const HeroSection = () => (
   <motion.section
     className="relative h-screen"
     initial={{ opacity: 0 }}
@@ -45,3 +45,5 @@ export const HeroSection: React.FC = () => (
     </div>
   </motion.section>
 );
+
+export default HeroSection;

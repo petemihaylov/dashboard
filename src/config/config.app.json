@@ -1,0 +1,9 @@
+{
+  "app": {
+    "name": "MyApp",
+    "icon": {
+      "light": "/path/to/light-icon.ico",
+      "dark": "/path/to/dark-icon.ico"
+    }
+  }
+}

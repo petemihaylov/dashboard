@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../../../components/Card";
 
 type Service = {
   title: string;
@@ -9,13 +9,11 @@ type Service = {
   link: string;
 };
 
-type ServicesSectionProps = {
+interface Props {
   services: Service[];
-};
+}
 
-export const ServicesSection: React.FC<ServicesSectionProps> = ({
-  services,
-}) => (
+const ServicesSection = ({ services }: Props) => (
   <section id="services" className="py-24 bg-gray-100">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
@@ -48,3 +46,5 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
     </div>
   </section>
 );
+
+export default ServicesSection;

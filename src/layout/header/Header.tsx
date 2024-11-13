@@ -5,14 +5,14 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
+} from "../../components/DropdownMenu";
+import { Button } from "../../components/Button";
 
-type HeaderProps = {
+interface Props {
   isScrolled: boolean;
-};
+}
 
-export const Header: React.FC<HeaderProps> = ({ isScrolled }) => (
+const Header = ({ isScrolled }: Props) => (
   <header
     className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
@@ -63,3 +63,5 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => (
     </div>
   </header>
 );
+
+export default Header;

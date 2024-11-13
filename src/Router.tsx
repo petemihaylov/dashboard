@@ -1,5 +1,11 @@
 import React, { lazy, Suspense } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+const Layout = lazy(() =>
+  import("./layout").then((module) => ({
+    default: module.Layout,
+  }))
+);
 
 const LandingPage = lazy(() =>
   import("./pages").then((module) => ({
@@ -7,16 +13,25 @@ const LandingPage = lazy(() =>
   }))
 );
 
+const AboutPage = lazy(() =>
+  import("./pages").then((module) => ({
+    default: module.AboutPage,
+  }))
+);
+
 const Router = () => (
-  <HashRouter>
+  <BrowserRouter>
     <Suspense>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </Suspense>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default Router;

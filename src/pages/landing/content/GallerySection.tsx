@@ -2,11 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type GallerySectionProps = {
+interface Props {
   images: string[];
-};
+}
 
-export const GallerySection: React.FC<GallerySectionProps> = ({ images }) => (
+const GallerySection = ({ images }: Props) => (
   <section id="gallery" className="py-24">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
@@ -30,3 +30,5 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ images }) => (
     </div>
   </section>
 );
+
+export default GallerySection;
