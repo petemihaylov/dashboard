@@ -1,8 +1,8 @@
-// const appReducers = combineReducers({
-//   // Add reducers here
+import { combineReducers } from "redux";
+import authReducer from "./auth/auth-slices";
 
-// });
-
-const appReducers = null;
+const appReducers = combineReducers({
+  auth: authReducer,
+});
 
 export default appReducers;

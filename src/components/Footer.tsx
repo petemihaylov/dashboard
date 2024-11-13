@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const Footer: React.FC = () => (
   <footer className="bg-gray-100 py-12">

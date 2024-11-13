@@ -1,12 +1,12 @@
-import React from 'react';
-import { Globe, Menu } from 'lucide-react';
+import React from "react";
+import { Globe, Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
-import { Button } from './ui/button';
+} from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
 
 type HeaderProps = {
   isScrolled: boolean;
@@ -15,7 +15,7 @@ type HeaderProps = {
 export const Header: React.FC<HeaderProps> = ({ isScrolled }) => (
   <header
     className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+      isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
     }`}
   >
     <div className="container mx-auto px-4 h-16 flex items-center">
