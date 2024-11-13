@@ -70,7 +70,7 @@ const DivingEquipment = () => {
         >
           <div className="w-100 h-48 relative">
             <img
-              src="/images/04.jpg"
+              src="src/assets/images/04.jpg"
               alt="Shark"
               className="absolute inset-0 w-full h-full object-contain transform -rotate-12"
             />
@@ -100,7 +100,7 @@ const DivingEquipment = () => {
         >
           <div className="w-100 h-48 relative">
             <img
-              src="/images/04.jpg"
+              src="src/assets/images/04.jpg"
               alt="Shark"
               className="absolute inset-0 w-full h-full object-contain transform -rotate-12"
             />
