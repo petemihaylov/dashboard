@@ -35,5 +35,3 @@ i18n
     },
     debug: false,
   });
-
-export { i18n };

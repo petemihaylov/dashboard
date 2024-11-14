@@ -2,9 +2,11 @@ import { LanguageMetadata, LanguageTranslation } from "../types";
 
 export const bg: LanguageTranslation = {
   translation: {
-    dashboard: {
-      search: "Въведете съобщение...",
-      dashboard_button: "Табло",
+    header: {
+      services: "Услуги",
+      gallery: "Галерия",
+      testimonials: "Отзиви",
+      contacts: "Контакти",
     },
   },
 };

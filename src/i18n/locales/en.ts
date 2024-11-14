@@ -2,9 +2,11 @@ import { LanguageMetadata } from "../types";
 
 export const en = {
   translation: {
-    dashboard: {
-      search: "Type a message...",
-      dashboard_button: "Dashboard",
+    header: {
+      services: "Services",
+      gallery: "Gallery",
+      testimonials: "Testimonials",
+      contacts: "Contacts",
     },
   },
 };

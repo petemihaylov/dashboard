@@ -2,9 +2,11 @@ import { LanguageMetadata, LanguageTranslation } from "../types";
 
 export const nl: LanguageTranslation = {
   translation: {
-    dashboard: {
-      search: "Typ een bericht...",
-      dashboard_button: "Dashboard",
+    header: {
+      services: "Diensten",
+      gallery: "Galerij",
+      testimonials: "Getuigenissen",
+      contacts: "Contacten",
     },
   },
 };

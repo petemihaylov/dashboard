@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import cn from "classnames";
 import { LanguagesIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "../../components/DropdownMenu";
 import { Button } from "../../components/Button";
-import { i18n, languages } from "../../i18n/i18n";
+import { languages } from "../../i18n/i18n";
 import config from "../../config/config";
 import MenuIcon from "../../assets/svgs/MenuIcon";
 
@@ -21,9 +22,21 @@ interface Props {
 const Header = ({ isScrolled, onMenuClick }: Props) => {
   const navigate = useNavigate();
 
-  const changeLanguage = useCallback((language: string) => {
-    i18n.changeLanguage(language);
-  }, []);
+  const { i18n, t } = useTranslation();
+
+  const changeLanguage = useCallback(
+    (language: string) => {
+      i18n.changeLanguage(language);
+    },
+    [i18n]
+  );
+
+  const items = [
+    { name: "header.services", link: "#services" },
+    { name: "header.gallery", link: "#gallery" },
+    { name: "header.testimonials", link: "#testimonials" },
+    { name: "header.contacts", link: "#contact" },
+  ];
 
   return (
     <header
@@ -47,17 +60,17 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
         </div>
 
         <nav className="hidden md:flex ml-auto gap-8">
-          {["Services", "Gallery", "Testimonials", "Contact"].map((item) => (
+          {items.map((item) => (
             <button
-              key={item}
+              key={item.name}
               type="button"
               className={cn("text-sm font-medium", {
                 "text-gray-800 hover:text-black": isScrolled,
                 "text-gray-300 hover:text-white": !isScrolled,
               })}
-              onClick={() => navigate(`#${item.toLowerCase()}`)}
+              onClick={() => navigate(item.link)}
             >
-              {item}
+              {t(item.name)}
             </button>
           ))}
         </nav>
@@ -102,7 +115,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
           className="md:hidden absolute right-4 top-5"
           onClick={onMenuClick}
         >
-          <MenuIcon fill="#fff" />
+          <MenuIcon fill={isScrolled ? "#000" : "#fff"} />
         </button>
       </div>
     </header>
