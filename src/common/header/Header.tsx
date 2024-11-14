@@ -48,7 +48,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             <img
               src={isScrolled ? config.app.icon.light : config.app.icon.dark}
               alt={config.app.name}
-              className="h-[3rem] w-[3rem]"
+              className="h-[1.5rem] w-[1.5rem]"
             />
           </button>
         </div>
