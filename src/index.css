@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* For Google Fonts */
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
 /* If you're using local fonts, it would look like this */
 @font-face {
   font-family: "Montserrat";
@@ -17,7 +12,11 @@ body {
   font-style: normal;
 }
 
+html,
+head,
 body {
+  padding: 0;
+  margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
