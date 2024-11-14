@@ -42,7 +42,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
         }
       )}
     >
-      <div className="flex flex-row md:container w-full justify-between px-4 h-16 items-center">
+      <div className="flex flex-row md:container w-full justify-between pr-[6rem] px-4 h-16 items-center">
         <div className="flex items-center">
           <button type="button" onClick={() => navigate("/")}>
             <img
@@ -75,7 +75,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             aria-label="usermenu"
           >
             <MenuButton
-              className="group w-full  text-sm text-left font-medium text-gray-700 focus:outline-none"
+              className="group w-full text-sm text-left font-medium text-gray-700 focus:outline-none"
               aria-label="usermenu-button"
             >
               <span className="flex w-full justify-between items-center">
@@ -98,7 +98,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             >
               <MenuItems
                 aria-label="menu-item-container"
-                className="z-10 mx-3 origin-top absolute left-[-36px] sm:left-[-25px] md:left-[-25px] top-[30px] xl:left-[-80px] right-0 w-fit mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+                className="z-10 mx-3 origin-top absolute top-[30px] -left-[60px] right-0 w-fit mt-1 rounded-md shadow-lg bg-white divide-y divide-gray-200 focus:outline-none"
               >
                 <div className="px-1 py-1 " aria-label="menu-items">
                   {languages.map((lng) => (
