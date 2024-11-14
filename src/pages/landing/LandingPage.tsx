@@ -7,7 +7,7 @@ import PartnersSection from "./content/PartnersSection";
 const LandingPage = () => (
   <>
     <HeroSection />
-    <PartnersSection/>
+    <PartnersSection />
     <BentoSection />
     <ContactSection />
   </>

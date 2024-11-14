@@ -17,10 +17,6 @@ body {
   font-style: normal;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 4px;
