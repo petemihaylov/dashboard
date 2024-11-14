@@ -19,7 +19,7 @@ const AboutPage = lazy(() =>
   }))
 );
 
-const ServicesPage = lazy(() =>
+const PricesPage = lazy(() =>
   import("./pages").then((module) => ({
     default: module.PricesPage,
   }))
@@ -32,7 +32,7 @@ const Router = () => (
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/prices" element={<PricesPage />} />
         </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
