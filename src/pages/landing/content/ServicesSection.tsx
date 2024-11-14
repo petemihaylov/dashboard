@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { VscArrowRight } from "react-icons/vsc";
 
 import {
   Card,
@@ -88,7 +88,7 @@ const ServicesSection = () => {
                     className="inline-flex items-center justify-center text-sm"
                     aria-label={`Learn more about ${service.title}`}
                   >
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    Learn More <VscArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </CardFooter>
               </Card>

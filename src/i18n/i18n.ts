@@ -22,16 +22,22 @@ const resources = {
   ru,
 };
 
+const savedLanguage = localStorage.getItem("lang") || enMetadata.code;
+
 i18n
   .use(initReactI18next)
   .use(Backend)
   .use(sprintf)
   .init({
     resources,
-    lng: enMetadata.code,
+    lng: savedLanguage,
     fallbackLng: enMetadata.code,
     interpolation: {
       escapeValue: false,
     },
     debug: false,
   });
+
+i18n.on("languageChanged", (lng) => {
+  localStorage.setItem("lang", lng);
+});

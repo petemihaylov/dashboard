@@ -1,8 +1,6 @@
 import React from "react";
+import { Button, Input, Textarea } from "@headlessui/react";
 import { motion } from "framer-motion";
-import { Button } from "../../../components/Button";
-import { Input } from "../../../components/Input";
-import { Textarea } from "../../../components/Textarea";
 
 const ContactSection = () => (
   <section id="contact" className="py-24">
@@ -16,10 +14,16 @@ const ContactSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <Input placeholder="Name" />
+        <Input placeholder="Name" className="data-[hover]:shadow" />
         <Input type="email" placeholder="Email" />
-        <Textarea placeholder="Message" />
-        <Button type="submit" className="w-full">
+        <Textarea
+          placeholder="Message"
+          className="border w-full data-[hover]:shadow"
+        />
+        <Button
+          type="submit"
+          className="rounded bg-sky-600 py-2 px-4 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700 w-full"
+        >
           Send Message
         </Button>
       </motion.form>

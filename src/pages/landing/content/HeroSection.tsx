@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "../../../components/Button";
+import { Button } from "@headlessui/react";
 
 const HeroSection = () => (
   <motion.section
@@ -30,14 +30,10 @@ const HeroSection = () => (
           diving tours and courses.
         </p>
         <div className="mt-10 flex gap-4">
-          <Button size="lg" className="bg-white text-black hover:bg-gray-200">
+          <Button className="bg-white text-black hover:bg-gray-200">
             Get Started
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-white border-white hover:bg-white hover:text-black"
-          >
+          <Button className="text-white border-white hover:bg-white hover:text-black">
             Learn More
           </Button>
         </div>

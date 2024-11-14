@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import { Button } from "@headlessui/react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { Button } from "../../../components/Button";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -19,8 +18,6 @@ const TestimonialsSection = () => {
         </h2>
         <div className="relative max-w-3xl mx-auto">
           <Button
-            variant="outline"
-            size="icon"
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16"
             onClick={() =>
               setCurrentTestimonial(
@@ -28,7 +25,7 @@ const TestimonialsSection = () => {
               )
             }
           >
-            <ChevronLeft className="h-4 w-4" />
+            {/* <ChevronLeft className="h-4 w-4" /> */}
           </Button>
           <motion.div
             key={currentTestimonial}
@@ -38,7 +35,7 @@ const TestimonialsSection = () => {
             transition={{ duration: 0.3 }}
             className="text-center"
           >
-            <div className="flex justify-center mb-4">
+            {/* <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
                   className={`h-6 w-6 ${
@@ -48,7 +45,7 @@ const TestimonialsSection = () => {
                   }`}
                 />
               ))}
-            </div>
+            </div> */}
             <p className="text-xl italic mb-6">
               {testimonials[currentTestimonial].text}
             </p>
@@ -57,14 +54,12 @@ const TestimonialsSection = () => {
             </p>
           </motion.div>
           <Button
-            variant="outline"
-            size="icon"
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16"
             onClick={() =>
               setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
             }
           >
-            <ChevronRight className="h-4 w-4" />
+            {/* <ChevronRight className="h-4 w-4" /> */}
           </Button>
         </div>
       </div>
