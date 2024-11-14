@@ -7,6 +7,12 @@ const Layout = lazy(() =>
   }))
 );
 
+const NotFound = lazy(() =>
+  import("./common").then((module) => ({
+    default: module.NotFound,
+  }))
+);
+
 const LandingPage = lazy(() =>
   import("./pages").then((module) => ({
     default: module.LandingPage,
@@ -16,6 +22,12 @@ const LandingPage = lazy(() =>
 const AboutPage = lazy(() =>
   import("./pages").then((module) => ({
     default: module.AboutPage,
+  }))
+);
+
+const ContactsPage = lazy(() =>
+  import("./pages").then((module) => ({
+    default: module.ContactsPage,
   }))
 );
 
@@ -32,10 +44,11 @@ const Router = () => (
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/prices" element={<PricesPage />} />
         </Route>
 
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   </BrowserRouter>

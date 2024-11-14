@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import cn from "classnames";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -16,37 +15,31 @@ import config from "../../config/config";
 import MenuIcon from "../../assets/icons/MenuIcon";
 
 interface Props {
-  isScrolled: boolean;
+  scrolled: boolean;
   onMenuClick: () => void;
 }
 
-const Header = ({ isScrolled, onMenuClick }: Props) => {
+const Header = ({ onMenuClick, scrolled = false }: Props) => {
   const navigate = useNavigate();
-
   const { i18n, t } = useTranslation();
 
   const items = [
     { name: "header.services", link: "#services" },
     { name: "header.gallery", link: "#gallery" },
     { name: "header.testimonials", link: "#testimonials" },
-    { name: "header.contacts", link: "#contact" },
+    { name: "header.contacts", link: "contacts" },
   ];
 
   return (
     <header
-      className={cn(
-        "fixed top-0 w-full z-10 transition-all duration-300 flex justify-center",
-        {
-          "bg-white/80 backdrop-blur-md shadow-md": isScrolled,
-          "bg-transparent": !isScrolled,
-        }
-      )}
+      data-scrolled={scrolled}
+      className="fixed top-0 w-full z-10 transition-all duration-300 flex justify-center bg-transparent data-[scrolled=true]:bg-white/80 data-[scrolled=true]:backdrop-blur-md data-[scrolled=true]:shadow-md"
     >
       <div className="flex flex-row md:container w-full justify-between pr-[6rem] px-4 h-16 items-center">
         <div className="flex items-center">
           <button type="button" onClick={() => navigate("/")}>
             <img
-              src={isScrolled ? config.app.icon.light : config.app.icon.dark}
+              src={scrolled ? config.app.icon.light : config.app.icon.dark}
               alt={config.app.name}
               className="h-[1.5rem] w-[1.5rem]"
             />
@@ -57,10 +50,11 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
           {items.map((item) => (
             <Button
               key={item.name}
-              className={cn("text-sm font-medium", {
-                "text-gray-800 hover:text-black": isScrolled,
-                "text-gray-300 hover:text-white": !isScrolled,
-              })}
+              className={`text-sm font-medium ${
+                scrolled
+                  ? "text-gray-800 hover:text-black"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => navigate(item.link)}
             >
               {t(item.name)}
@@ -80,10 +74,11 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             >
               <span className="flex w-full justify-between items-center">
                 <VscGlobe
-                  className={cn("h-5 w-5 cursor-pointer", {
-                    "text-gray-800 hover:text-black": isScrolled,
-                    "text-gray-300 hover:text-white": !isScrolled,
-                  })}
+                  className={`h-5 w-5 cursor-pointer ${
+                    scrolled
+                      ? "text-gray-800 hover:text-black"
+                      : "text-gray-300 hover:text-white"
+                  }`}
                 />
               </span>
             </MenuButton>
@@ -98,18 +93,15 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             >
               <MenuItems
                 aria-label="menu-item-container"
-                className="z-10 mx-3 origin-top absolute top-[30px] -left-[60px] right-0 w-fit mt-1rounded shadow-lg bg-white divide-y divide-gray-200 focus:outline-none"
+                className="z-10 mx-3 origin-top absolute top-[30px] -left-[60px] right-0 w-fit mt-1 rounded shadow-lg bg-white divide-y divide-gray-200 focus:outline-none"
               >
-                <div className="px-1 py-1 " aria-label="menu-items">
+                <div className="px-1 py-1" aria-label="menu-items">
                   {languages.map((lng) => (
                     <MenuItem key={lng.code}>
                       <Button
-                        className={cn(
-                          "flex items-center space-x-2 px-4 py-2 text-sm cursor-pointer w-full",
-                          {
-                            "bg-[#F4F6F8]": i18n.language === lng.code,
-                          }
-                        )}
+                        className={`flex items-center space-x-2 px-4 py-2 text-sm cursor-pointer w-full ${
+                          i18n.language === lng.code ? "bg-[#F4F6F8]" : ""
+                        }`}
                         onClick={() => i18n.changeLanguage(lng.code)}
                         disabled={i18n.language === lng.code}
                       >
@@ -128,7 +120,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
           className="md:hidden absolute right-4 top-5"
           onClick={onMenuClick}
         >
-          <MenuIcon fill={isScrolled ? "#000" : "#fff"} />
+          <MenuIcon fill={scrolled ? "#000" : "#fff"} />
         </Button>
       </div>
     </header>

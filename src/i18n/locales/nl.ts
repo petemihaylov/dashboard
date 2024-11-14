@@ -8,6 +8,13 @@ export const nl: LanguageTranslation = {
       testimonials: "Getuigenissen",
       contacts: "Contacten",
     },
+    feedback: {
+      not_found: {
+        title: "Pagina niet gevonden",
+        description: "Sorry, we konden de pagina die u zoekt niet vinden.",
+        go_back: "Ga terug",
+      },
+    },
   },
 };
 

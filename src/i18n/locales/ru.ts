@@ -8,6 +8,13 @@ export const ru: LanguageTranslation = {
       testimonials: "Отзывы",
       contacts: "Контакты",
     },
+    feedback: {
+      not_found: {
+        title: "Страница не найдена",
+        description: "Извините, мы не смогли найти страницу, которую вы ищете.",
+        go_back: "Вернуться назад",
+      },
+    },
   },
 };
 

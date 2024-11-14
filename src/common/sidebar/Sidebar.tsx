@@ -27,7 +27,7 @@ const Sidebar = ({ onMenuClick, isSidebarOpen }: Props) => {
     { name: "header.services", link: "#services" },
     { name: "header.gallery", link: "#gallery" },
     { name: "header.testimonials", link: "#testimonials" },
-    { name: "header.contacts", link: "#contact" },
+    { name: "header.contacts", link: "contacts" },
   ];
 
   const selected = languages.find((lng) => lng.code === i18n.language);

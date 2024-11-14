@@ -5,7 +5,7 @@ const ContactSection = () => {
   const [enabled, setEnabled] = useState(false);
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-24 relative">
       <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -118,10 +118,10 @@ const ContactSection = () => {
                 <Switch
                   checked={enabled}
                   onChange={setEnabled}
-                  className="group inline-flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 data-[checked]:bg-indigo-600  shadow-sm ring-1 ring-gray-900/5 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50"
+                  className="group inline-flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 data-[checked]:bg-indigo-600 shadow-sm ring-1 ring-gray-900/5 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50"
                 >
                   <span className="sr-only">Agree to policies</span>
-                  <span className="size-4 translate-x-0 rounded-full bg-white group-data-[checked]:translate-x-4  shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out" />
+                  <span className="size-4 translate-x-0 rounded-full bg-white group-data-[checked]:translate-x-4 shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out" />
                 </Switch>
               </div>
               <label
