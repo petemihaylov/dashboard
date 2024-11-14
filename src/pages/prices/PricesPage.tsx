@@ -62,7 +62,7 @@ const PADI_COURSES = [
   },
 ];
 
-const ServicesPage = () => (
+const PricesPage = () => (
   <div className="min-h-screen bg-gradient-to-b from-[#396afc] via-[#396afc]  to-[#396afc] py-12 px-4">
     <div className="max-w-6xl mx-auto space-y-14 mt-20">
       <PriceTable
@@ -109,4 +109,4 @@ const ServicesPage = () => (
   </div>
 );
 
-export default ServicesPage;
+export default PricesPage;

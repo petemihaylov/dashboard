@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For Google Fonts */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* If you're using local fonts, it would look like this */
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("/assets/fonts/montserrat.woff2") format("woff2"),
+    url("/assets/fonts/montserrat.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 4px;

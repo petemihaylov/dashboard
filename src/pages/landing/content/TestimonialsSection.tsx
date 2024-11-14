@@ -3,18 +3,13 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "../../../components/Button";
 
-type Testimonial = {
-  text: string;
-  author: string;
-  rating: number;
-};
-
-interface Props {
-  testimonials: Testimonial[];
-}
-
-const TestimonialsSection = ({ testimonials }: Props) => {
+const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonials = [
+    { text: "Amazing experience!", author: "John Doe", rating: 5 },
+    // More testimonials...
+  ];
 
   return (
     <section id="testimonials" className="py-24 bg-gray-100">

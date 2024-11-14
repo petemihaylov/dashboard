@@ -3,9 +3,17 @@ import Backend from "i18next-http-backend";
 import sprintf from "i18next-sprintf-postprocessor";
 import { initReactI18next } from "react-i18next";
 import { en, enMetadata } from "./locales/en";
-import { nl } from "./locales/nl";
-import { ru } from "./locales/ru";
-import { bg } from "./locales/bg";
+import { nl, nlMetadata } from "./locales/nl";
+import { ru, ruMetadata } from "./locales/ru";
+import { bg, bgMetadata } from "./locales/bg";
+import { LanguageMetadata } from "./types";
+
+export const languages: LanguageMetadata[] = [
+  enMetadata,
+  nlMetadata,
+  ruMetadata,
+  bgMetadata,
+];
 
 const resources = {
   en,
@@ -27,3 +35,5 @@ i18n
     },
     debug: false,
   });
+
+export { i18n };

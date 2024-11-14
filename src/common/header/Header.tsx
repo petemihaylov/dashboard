@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import cn from "classnames";
-import { Globe } from "lucide-react";
+import { LanguagesIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,100 +9,104 @@ import {
   DropdownMenuTrigger,
 } from "../../components/DropdownMenu";
 import { Button } from "../../components/Button";
+import { i18n, languages } from "../../i18n/i18n";
+import config from "../../config/config";
+import MenuIcon from "../../assets/svgs/MenuIcon";
 
 interface Props {
   isScrolled: boolean;
   onMenuClick: () => void;
 }
 
-const Header = ({ isScrolled, onMenuClick }: Props) => (
-  <header
-    className={cn(
-      "fixed top-0 w-full z-10 transition-all duration-300 flex justify-center",
-      {
-        "bg-white/80 backdrop-blur-md shadow-md": isScrolled,
-        "bg-transparent": !isScrolled,
-      }
-    )}
-  >
-    <div className="flex flex-row md:container w-full justify-between px-4 h-16 items-center">
-      <div className="flex items-center">
-        <span
-          className={cn("font-bold", {
-            "text-black": isScrolled,
-            "text-white": !isScrolled,
-          })}
-        >
-          Diving Center Arapya
-        </span>
-      </div>
+const Header = ({ isScrolled, onMenuClick }: Props) => {
+  const navigate = useNavigate();
 
-      <nav
-        className={cn("hidden md:flex ml-auto gap-8", {
-          "text-black": isScrolled,
-          "text-white": !isScrolled,
-        })}
-      >
-        <a className="text-sm font-medium hover:text-primary" href="#services">
-          Services
-        </a>
-        <a className="text-sm font-medium hover:text-primary" href="#gallery">
-          Gallery
-        </a>
-        <a
-          className="text-sm font-medium hover:text-primary"
-          href="#testimonials"
-        >
-          Testimonials
-        </a>
-        <a className="text-sm font-medium hover:text-primary" href="#contact">
-          Contact
-        </a>
-      </nav>
+  const changeLanguage = useCallback((language: string) => {
+    i18n.changeLanguage(language);
+  }, []);
 
-      <div className="hidden md:flex items-center gap-4 ml-4">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Globe
-                className={cn("h-4 w-4", {
-                  "text-black": isScrolled,
-                  "text-white": !isScrolled,
+  return (
+    <header
+      className={cn(
+        "fixed top-0 w-full z-10 transition-all duration-300 flex justify-center",
+        {
+          "bg-white/80 backdrop-blur-md shadow-md": isScrolled,
+          "bg-transparent": !isScrolled,
+        }
+      )}
+    >
+      <div className="flex flex-row md:container w-full justify-between px-4 h-16 items-center">
+        <div className="flex items-center">
+          <button type="button" onClick={() => navigate("/")}>
+            <img
+              src={isScrolled ? config.app.icon.light : config.app.icon.dark}
+              alt={config.app.name}
+              className="h-[3rem] w-[3rem]"
+            />
+          </button>
+        </div>
+
+        <nav className="hidden md:flex ml-auto gap-8">
+          {["Services", "Gallery", "Testimonials", "Contact"].map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={cn("text-sm font-medium", {
+                "text-gray-800 hover:text-black": isScrolled,
+                "text-gray-300 hover:text-white": !isScrolled,
+              })}
+              onClick={() => navigate(`#${item.toLowerCase()}`)}
+            >
+              {item}
+            </button>
+          ))}
+        </nav>
+
+        <div className="hidden md:flex items-center gap-4 ml-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn({
+                  "text-gray-800 hover:text-black": isScrolled,
+                  "text-gray-300 hover:text-white": !isScrolled,
                 })}
-              />
-              <span className="sr-only">Toggle language</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem>English</DropdownMenuItem>
-            <DropdownMenuItem>Български</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
+              >
+                <LanguagesIcon className="h-6 w-6" />
+                <span className="sr-only">Toggle language</span>
+              </Button>
+            </DropdownMenuTrigger>
 
-      <button
-        type="button"
-        className="md:hidden absolute right-4 top-5"
-        onClick={onMenuClick}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="icon-xl-heavy"
+            <DropdownMenuContent
+              align="end"
+              className="border-none bg-black hover:text-white"
+            >
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  className={cn("text-gray-300", {
+                    "bg-gray-600": i18n.language === language.code,
+                  })}
+                  onClick={() => changeLanguage(language.code)}
+                >
+                  {language.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
+        <button
+          type="button"
+          className="md:hidden absolute right-4 top-5"
+          onClick={onMenuClick}
         >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z"
-            fill="#FFF"
-          />
-        </svg>
-      </button>
-    </div>
-  </header>
-);
+          <MenuIcon fill="#fff" />
+        </button>
+      </div>
+    </header>
+  );
+};
 
 export default Header;

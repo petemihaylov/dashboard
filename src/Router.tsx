@@ -21,7 +21,7 @@ const AboutPage = lazy(() =>
 
 const ServicesPage = lazy(() =>
   import("./pages").then((module) => ({
-    default: module.ServicesPage,
+    default: module.PricesPage,
   }))
 );
 

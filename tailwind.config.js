@@ -21,8 +21,15 @@ export default {
       xl: "1.25rem",
       "2xl": "1.5rem",
       "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
+      "7xl": "4rem",
     },
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", "Arial", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
