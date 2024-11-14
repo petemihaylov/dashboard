@@ -30,12 +30,10 @@ const HeroSection = () => (
           diving tours and courses.
         </p>
         <div className="mt-10 flex gap-4">
-          <Button className="bg-white text-black hover:bg-gray-200">
+          <Button className="hover:text-white text-gray-300 block w-[8rem] rounded bg-indigo-600 px-3.5 h-[2.5rem]">
             Get Started
           </Button>
-          <Button className="text-white border-white hover:bg-white hover:text-black">
-            Learn More
-          </Button>
+          <Button className="hover:text-white text-gray-300">Learn More</Button>
         </div>
       </motion.div>
     </div>

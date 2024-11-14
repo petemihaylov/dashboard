@@ -98,7 +98,7 @@ const Header = ({ isScrolled, onMenuClick }: Props) => {
             >
               <MenuItems
                 aria-label="menu-item-container"
-                className="z-10 mx-3 origin-top absolute top-[30px] -left-[60px] right-0 w-fit mt-1 rounded-md shadow-lg bg-white divide-y divide-gray-200 focus:outline-none"
+                className="z-10 mx-3 origin-top absolute top-[30px] -left-[60px] right-0 w-fit mt-1rounded shadow-lg bg-white divide-y divide-gray-200 focus:outline-none"
               >
                 <div className="px-1 py-1 " aria-label="menu-items">
                   {languages.map((lng) => (

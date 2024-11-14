@@ -87,7 +87,7 @@ const Sidebar = ({ onMenuClick, isSidebarOpen }: Props) => {
           >
             <MenuItems
               aria-label="menu-item-container"
-              className="z-10 mx-3 origin-top absolute top-[45px] right-0 w-full mt-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
+              className="z-10 mx-3 origin-top absolute top-[45px] right-0 w-full mt-1rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-200 focus:outline-none"
             >
               <div className="px-1 py-1 " aria-label="menu-items">
                 {languages.map((lng) => (
