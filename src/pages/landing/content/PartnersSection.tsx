@@ -37,17 +37,22 @@ const PartnersSection = () => {
       <style>
         {`
             @keyframes scroll {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-100%); }
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-100%); }
             }
         `}
       </style>
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-center text-lg font-semibold text-gray-900">
-            Trusted by the world&apos;s most innovative teams
-          </h2>
-          <div className="mx-auto mt-10 relative overflow-hidden">
+          <div
+            className="mx-auto mt-10 relative overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 128px, black calc(100% - 128px), transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 128px, black calc(100% - 128px), transparent 100%)", // For Safari compatibility
+            }}
+          >
             <div style={scrollAnimation}>
               {logos.concat(logos).map((logo) => (
                 <img
