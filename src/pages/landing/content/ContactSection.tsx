@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Input, Textarea } from "@headlessui/react";
-import { motion } from "framer-motion";
 
 const ContactSection = () => (
   <section id="contact" className="py-24">
@@ -39,7 +38,7 @@ const ContactSection = () => (
               First name
             </label>
             <div className="mt-2.5">
-              <input
+              <Input
                 type="text"
                 name="first-name"
                 id="first-name"
@@ -56,7 +55,7 @@ const ContactSection = () => (
               Last name
             </label>
             <div className="mt-2.5">
-              <input
+              <Input
                 type="text"
                 name="last-name"
                 id="last-name"
@@ -73,7 +72,7 @@ const ContactSection = () => (
               Company
             </label>
             <div className="mt-2.5">
-              <input
+              <Input
                 type="text"
                 name="company"
                 id="company"
@@ -90,7 +89,7 @@ const ContactSection = () => (
               Email
             </label>
             <div className="mt-2.5">
-              <input
+              <Input
                 type="email"
                 name="email"
                 id="email"
@@ -121,7 +120,7 @@ const ContactSection = () => (
                   <option>EU</option>
                 </select>
               </div>
-              <input
+              <Input
                 type="tel"
                 name="phone-number"
                 id="phone-number"
@@ -137,7 +136,7 @@ const ContactSection = () => (
               Message
             </label>
             <div className="mt-2.5">
-              <textarea
+              <Textarea
                 name="message"
                 id="message"
                 rows={4}
@@ -148,8 +147,7 @@ const ContactSection = () => (
           <div className="flex gap-x-4 sm:col-span-2">
             <div className="flex h-6 items-center">
               {/* Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" */}
-              <button
-                type="button"
+              <Button
                 className="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 role="switch"
                 aria-checked="false"
@@ -161,13 +159,19 @@ const ContactSection = () => (
                   aria-hidden="true"
                   className="size-4 translate-x-0 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"
                 />
-              </button>
+              </Button>
             </div>
-            <label className="text-sm text-gray-600" id="switch-1-label">
+            <label
+              className="text-sm text-gray-600"
+              htmlFor="agree-to-policies"
+            >
               By selecting this, you agree to our
-              <a href="#" className="font-semibold ml-2 text-indigo-600">
+              <button
+                type="button"
+                className="font-semibold ml-2 text-indigo-600"
+              >
                 privacy&nbsp;policy
-              </a>
+              </button>
               .
             </label>
           </div>
@@ -177,7 +181,7 @@ const ContactSection = () => (
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Let's talk
+            Let&apos;s talk
           </button>
         </div>
       </form>
