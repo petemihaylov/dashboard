@@ -30,6 +30,11 @@ const PricesPage = lazy(() =>
     default: module.PricesPage,
   }))
 );
+const GalleryPage = lazy(() =>
+  import("./pages").then((module) => ({
+    default: module.GalleryPage,
+  }))
+);
 
 const Router = () => (
   <BrowserRouter>
@@ -39,6 +44,7 @@ const Router = () => (
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/prices" element={<PricesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

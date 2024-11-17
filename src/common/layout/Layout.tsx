@@ -30,27 +30,25 @@ const Layout = ({ children, transparent = false }: Props) => {
         mainElement.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [mainRef]);
 
+  // TODO: Check which is the overflowing layout.
   return (
-    <div className="relative flex flex-col h-screen w-full overflow-hidden transition-colors z-0">
+    <div
+      ref={mainRef}
+      className="relative flex flex-col w-full h-screen transition-colors z-0"
+    >
       <Header
         transparent={transparent}
         scrolled={scrolled}
         onMenuClick={() => setSidebarOpen(!isSidebarOpen)}
       />
-      <div className="flex flex-grow overflow-hidden">
-        <Sidebar
-          isSidebarOpen={isSidebarOpen}
-          onMenuClick={() => setSidebarOpen(false)}
-        />
-        <div className="h-full w-full flex flex-col overflow-hidden">
-          <div ref={mainRef} className="flex-grow overflow-y-auto">
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </div>
-      </div>
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        onMenuClick={() => setSidebarOpen(false)}
+      />
+      <main>{children}</main>
+      <Footer />
     </div>
   );
 };
