@@ -7,40 +7,41 @@ const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: "DIVING COURSES",
+      title: "Diving Courses",
       description:
-        "Learn to dive with certified CMAS and PADI instructors. Courses available for beginners to advanced divers, including specialties such as wreck diving and underwater photography.",
+        "Learn to dive with certified CMAS and PADI instructors. Courses available for beginners to advanced divers.",
       price: "450 BGN", // Price in BGN
       features: [
         "Certified CMAS & PADI instructors",
         "Courses for all levels",
-        "Specialty courses (wreck diving, underwater photography)",
+        "Specialty courses",
       ],
       link: "/services",
     },
     {
       id: 2,
-      title: "DAY DIVE",
+      title: "Day Dive",
       description:
-        "Enjoy an adventurous day dive with experienced guides. Includes speed boat rides, tanks, weights, and equipment rental options. Suitable for certified divers.",
-      price: "250 BGN", // Price in BGN
+        "Enjoy an adventurous day dive with experienced guides. Ideal for non-divers or any level divers. Includes the whole equipment.",
+      price: "70 BGN", // Price in BGN
       features: [
         "Experienced diving guides",
-        "Speed boat rides included",
+        "Underwater photography",
         "Tanks, weights, and equipment rental",
       ],
       link: "/services/day-dive",
     },
     {
       id: 3,
-      title: "BOAT TRIP",
+      title: "Boat Dive",
       description:
-        "Relax on a scenic boat trip along the coastline. Ideal for non-divers and families, with opportunities for snorkeling, swimming, and enjoying the beautiful marine environment.",
+        "Experience an exciting wreck dive at one of the area's most renowned dive sites, exclusively for certified divers.",
       price: "150 BGN", // Price in BGN
       features: [
-        "Scenic boat ride along the coastline",
-        "Opportunities for snorkeling and swimming",
-        "Perfect for non-divers and families",
+        "Boat dive to an exciting wreck site",
+        "For certified divers only",
+        "Explore marine life around the wrecks",
+        "Experienced dive guides",
       ],
       link: "/services",
     },
@@ -49,9 +50,6 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
-          Our Services
-        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -62,21 +60,21 @@ const ServicesSection = () => {
               role="article"
               aria-label={service.title}
             >
-              <div className="relative flex h-full flex-col border overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+              <div className="relative flex h-full flex-col border hover:shadow cursor-pointer overflow-hidden rounded-xl">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600">
+                  <div className="flex gap-3">
+                    <span className="mb-3 inline-block rounded-md bg-gray-200 px-2 py-1 font-mono text-sm font-bold text-gray-500">
+                      0{service.id}
+                    </span>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="my-2 text-sm opacity-50">
                     {service.description}
                   </p>
-                  <div className="mt-4">
-                    <p className="font-semibold text-gray-900">
-                      {service.price}
-                    </p>
-                  </div>
                 </div>
-                <div className="px-8 pb-8 sm:px-10 sm:pb-10">
+                <div className="pt-8 px-10 pb-10">
                   <ul className="space-y-2 text-sm text-gray-600">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center">
