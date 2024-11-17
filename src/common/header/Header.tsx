@@ -63,7 +63,7 @@ const Header = ({
             <img
               src={iconSrc}
               alt={config.app.name}
-              className="h-[2rem] w-[2rem]"
+              className="sm:h-[2rem] sm:w-[2rem] h-[1.3rem] w-[1.3rem] opacity-90"
             />
           </Button>
         </div>
