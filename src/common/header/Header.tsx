@@ -30,14 +30,14 @@ const Header = ({
   const { i18n, t } = useTranslation();
 
   const items = [
-    { name: "header.services", link: "#services" },
-    { name: "header.gallery", link: "#gallery" },
-    { name: "header.testimonials", link: "#testimonials" },
+    { name: "header.services", link: "/services" },
+    { name: "header.gallery", link: "/gallery" },
+    { name: "header.testimonials", link: "/testimonials" },
     { name: "header.contacts", link: "/contacts" },
   ];
 
   // Determine the appropriate text color and image source
-  const textColorClass = transparent
+  const textClassName = transparent
     ? "text-gray-600 hover:text-black"
     : scrolled
       ? "text-gray-600 hover:text-black"
@@ -59,20 +59,20 @@ const Header = ({
     >
       <div className="flex flex-row md:container w-full justify-between pr-[6rem] px-4 h-16 items-center">
         <div className="flex items-center">
-          <button type="button" onClick={() => navigate("/")}>
+          <Button onClick={() => navigate("/")}>
             <img
               src={iconSrc}
               alt={config.app.name}
-              className="h-[1.5rem] w-[1.5rem]"
+              className="h-[2rem] w-[2rem]"
             />
-          </button>
+          </Button>
         </div>
 
         <nav className="hidden md:flex ml-auto gap-8">
           {items.map((item) => (
             <Button
               key={item.name}
-              className={cn("text-sm font-medium", textColorClass)}
+              className={cn("text-base", textClassName)}
               onClick={() => navigate(item.link)}
             >
               {t(item.name)}
@@ -89,13 +89,13 @@ const Header = ({
             <MenuButton
               className={cn(
                 "group w-full text-sm text-left font-medium focus:outline-none",
-                textColorClass
+                textClassName
               )}
               aria-label="usermenu-button"
             >
               <span className="flex w-full justify-between items-center">
                 <VscGlobe
-                  className={cn("h-5 w-5 cursor-pointer", textColorClass)}
+                  className={cn("h-5 w-5 cursor-pointer", textClassName)}
                 />
               </span>
             </MenuButton>

@@ -4,8 +4,8 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
 interface Props {
-  transparent: boolean;
-  children: React.ReactNode | React.ReactNode[];
+  transparent?: boolean;
+  children?: React.ReactNode | React.ReactNode[];
 }
 
 const Layout = ({ children, transparent = false }: Props) => {

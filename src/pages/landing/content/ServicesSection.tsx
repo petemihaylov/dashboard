@@ -47,7 +47,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gray-100">
+    <section id="services" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
           Our Services
