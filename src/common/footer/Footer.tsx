@@ -14,10 +14,10 @@ const Footer = () => (
         <div>
           <h3 className="font-bold mb-4">Quick Links</h3>
           <nav className="flex flex-col gap-2">
-            <a className="text-sm hover:underline" href="#services">
+            <a className="text-sm hover:underline" href="/services">
               Services
             </a>
-            <a className="text-sm hover:underline" href="#gallery">
+            <a className="text-sm hover:underline" href="/gallery">
               Gallery
             </a>
             <a className="text-sm hover:underline" href="/contacts">

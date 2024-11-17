@@ -57,7 +57,7 @@ const PartnersSection = () => {
               maskImage:
                 "linear-gradient(to right, transparent 0%, black 128px, black calc(100% - 128px), transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, black 128px, black calc(100% - 128px), transparent 100%)", // For Safari compatibility
+                "linear-gradient(to right, transparent 0%, black 128px, black calc(100% - 128px), transparent 100%)",
             }}
           >
             <div className="scrolling-container">

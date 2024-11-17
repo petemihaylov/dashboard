@@ -24,9 +24,9 @@ const Sidebar = ({ onMenuClick, isSidebarOpen }: Props) => {
   const { i18n, t } = useTranslation();
 
   const items = [
-    { name: "header.services", link: "#services" },
-    { name: "header.gallery", link: "#gallery" },
-    { name: "header.testimonials", link: "#testimonials" },
+    { name: "header.services", link: "/services" },
+    { name: "header.gallery", link: "/gallery" },
+    { name: "header.testimonials", link: "/testimonials" },
     { name: "header.contacts", link: "/contacts" },
   ];
 
