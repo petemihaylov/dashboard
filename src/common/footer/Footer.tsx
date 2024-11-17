@@ -20,7 +20,7 @@ const Footer = () => (
             <a className="text-sm hover:underline" href="#gallery">
               Gallery
             </a>
-            <a className="text-sm hover:underline" href="contacts">
+            <a className="text-sm hover:underline" href="/contacts">
               Contact
             </a>
           </nav>

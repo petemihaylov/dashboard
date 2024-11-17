@@ -4,11 +4,11 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
 interface Props {
-  scrollable?: boolean;
+  transparent: boolean;
   children: React.ReactNode | React.ReactNode[];
 }
 
-const Layout = ({ children, scrollable = false }: Props) => {
+const Layout = ({ children, transparent = false }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const mainRef = React.useRef<HTMLDivElement>(null);
@@ -35,7 +35,8 @@ const Layout = ({ children, scrollable = false }: Props) => {
   return (
     <div className="relative flex flex-col h-screen w-full overflow-hidden transition-colors z-0">
       <Header
-        scrolled={scrollable ? scrolled : true}
+        transparent={transparent}
+        scrolled={scrolled}
         onMenuClick={() => setSidebarOpen(!isSidebarOpen)}
       />
       <div className="flex flex-grow overflow-hidden">

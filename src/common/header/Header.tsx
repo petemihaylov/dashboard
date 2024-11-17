@@ -16,11 +16,16 @@ import config from "../../config/config";
 import MenuIcon from "../../assets/icons/MenuIcon";
 
 interface Props {
+  transparent: boolean;
   scrolled: boolean;
   onMenuClick: () => void;
 }
 
-const Header = ({ onMenuClick, scrolled = false }: Props) => {
+const Header = ({
+  onMenuClick,
+  transparent = false,
+  scrolled = false,
+}: Props) => {
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
 
@@ -28,19 +33,35 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
     { name: "header.services", link: "#services" },
     { name: "header.gallery", link: "#gallery" },
     { name: "header.testimonials", link: "#testimonials" },
-    { name: "header.contacts", link: "contacts" },
+    { name: "header.contacts", link: "/contacts" },
   ];
+
+  // Determine the appropriate text color and image source
+  const textColorClass = transparent
+    ? "text-gray-600 hover:text-black"
+    : scrolled
+      ? "text-gray-600 hover:text-black"
+      : "text-gray-300 hover:text-white";
+
+  const iconSrc = transparent
+    ? config.app.icon.light
+    : scrolled
+      ? config.app.icon.light
+      : config.app.icon.dark;
 
   return (
     <header
       data-scrolled={scrolled}
-      className="fixed top-0 w-full z-10 transition-all duration-300 flex justify-center bg-transparent data-[scrolled=true]:bg-white/80 data-[scrolled=true]:backdrop-blur-md data-[scrolled=true]:shadow-md"
+      className={cn(
+        "fixed top-0 w-full z-10 transition-all duration-300 flex justify-center",
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
+      )}
     >
       <div className="flex flex-row md:container w-full justify-between pr-[6rem] px-4 h-16 items-center">
         <div className="flex items-center">
           <button type="button" onClick={() => navigate("/")}>
             <img
-              src={scrolled ? config.app.icon.light : config.app.icon.dark}
+              src={iconSrc}
               alt={config.app.name}
               className="h-[1.5rem] w-[1.5rem]"
             />
@@ -51,11 +72,7 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
           {items.map((item) => (
             <Button
               key={item.name}
-              className={`text-sm font-medium ${
-                scrolled
-                  ? "text-gray-800 hover:text-black"
-                  : "text-gray-300 hover:text-white"
-              }`}
+              className={cn("text-sm font-medium", textColorClass)}
               onClick={() => navigate(item.link)}
             >
               {t(item.name)}
@@ -70,17 +87,15 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
             aria-label="usermenu"
           >
             <MenuButton
-              className="group w-full text-sm text-left font-medium text-gray-700 focus:outline-none"
+              className={cn(
+                "group w-full text-sm text-left font-medium focus:outline-none",
+                textColorClass
+              )}
               aria-label="usermenu-button"
             >
               <span className="flex w-full justify-between items-center">
                 <VscGlobe
-                  className={cn(
-                    "h-5 w-5 cursor-pointer",
-                    scrolled
-                      ? "text-gray-800 hover:text-black"
-                      : "text-gray-300 hover:text-white"
-                  )}
+                  className={cn("h-5 w-5 cursor-pointer", textColorClass)}
                 />
               </span>
             </MenuButton>
@@ -101,9 +116,10 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
                   {languages.map((lng) => (
                     <MenuItem key={lng.code}>
                       <Button
-                        className={`flex items-center space-x-2 px-4 py-2 text-sm cursor-pointer w-full ${
+                        className={cn(
+                          "flex items-center space-x-2 px-4 py-2 text-sm cursor-pointer w-full",
                           i18n.language === lng.code ? "bg-[#F4F6F8]" : ""
-                        }`}
+                        )}
                         onClick={() => i18n.changeLanguage(lng.code)}
                         disabled={i18n.language === lng.code}
                       >
@@ -122,7 +138,7 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
           className="md:hidden absolute right-4 top-5"
           onClick={onMenuClick}
         >
-          <MenuIcon fill={scrolled ? "#000" : "#fff"} />
+          <MenuIcon fill={transparent ? "#000" : "#fff"} />
         </Button>
       </div>
     </header>

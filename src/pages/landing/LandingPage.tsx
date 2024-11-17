@@ -7,7 +7,7 @@ import ServicesSection from "./content/ServicesSection";
 import { Layout } from "../../common";
 
 const LandingPage = () => (
-  <Layout scrollable>
+  <Layout>
     <HeroSection />
     <ServicesSection />
     <BentoSection />

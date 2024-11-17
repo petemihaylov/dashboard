@@ -3,7 +3,7 @@ import ContactSection from "./content/ContactSection";
 import { Layout } from "../../common";
 
 const ContactsPage = () => (
-  <Layout>
+  <Layout transparent>
     <div className="flex min-h-screen items-center justify-center">
       <ContactSection />
     </div>
