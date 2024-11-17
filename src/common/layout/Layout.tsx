@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
-const Layout = () => {
+interface Props {
+  scrollable?: boolean;
+  children: React.ReactNode | React.ReactNode[];
+}
+
+const Layout = ({ children, scrollable = false }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const mainRef = React.useRef<HTMLDivElement>(null);
@@ -31,7 +35,7 @@ const Layout = () => {
   return (
     <div className="relative flex flex-col h-screen w-full overflow-hidden transition-colors z-0">
       <Header
-        scrolled={scrolled}
+        scrolled={scrollable ? scrolled : true}
         onMenuClick={() => setSidebarOpen(!isSidebarOpen)}
       />
       <div className="flex flex-grow overflow-hidden">
@@ -41,9 +45,7 @@ const Layout = () => {
         />
         <div className="h-full w-full flex flex-col overflow-hidden">
           <div ref={mainRef} className="flex-grow overflow-y-auto">
-            <main>
-              <Outlet />
-            </main>
+            <main>{children}</main>
             <Footer />
           </div>
         </div>

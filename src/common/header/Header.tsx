@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import cn from "classnames";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -74,11 +75,12 @@ const Header = ({ onMenuClick, scrolled = false }: Props) => {
             >
               <span className="flex w-full justify-between items-center">
                 <VscGlobe
-                  className={`h-5 w-5 cursor-pointer ${
+                  className={cn(
+                    "h-5 w-5 cursor-pointer",
                     scrolled
                       ? "text-gray-800 hover:text-black"
                       : "text-gray-300 hover:text-white"
-                  }`}
+                  )}
                 />
               </span>
             </MenuButton>
