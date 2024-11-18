@@ -27,7 +27,7 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <h1 className="sm:text-5xl text-3xl font-bold tracking-tighter sm:text-6xl lg:text-7xl">
+          <h1 className="sm:text-5xl text-3xl font-bold tracking-tighter lg:text-7xl">
             <TextGenerateEffect duration={2} filter={false} words={headline} />
           </h1>
           <p className="mt-6 sm:text-xl text-sm">
