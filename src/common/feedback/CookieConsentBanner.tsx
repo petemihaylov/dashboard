@@ -32,22 +32,25 @@ const CookieConsentBanner = () => {
   };
 
   return (
+    // prettier-ignore
     <CookieConsent
       location="bottom"
       buttonText="Accept"
       declineButtonText="Decline"
       cookieName="user_consent"
-      style={{ background: "#2B373B" }}
+      contentClasses="text-sm"
+      style={{ background: "#FFF", color: "#000", textAlign: "left", borderTop: "0.5px solid #DDD" }}
       buttonStyle={{
-        backgroundColor: "#4CAF50",
-        color: "#fff",
+        color: "#FFF",
+        backgroundColor: "#4F45E4",
         fontSize: "13px",
         padding: "10px 20px",
         borderRadius: "5px",
       }}
+      buttonClasses="bg-indigo-600 text-gray-300"
       declineButtonStyle={{
-        backgroundColor: "#f44336",
-        color: "#fff",
+        backgroundColor: "#F44336",
+        color: "#000",
         fontSize: "13px",
         padding: "10px 20px",
         borderRadius: "5px",
@@ -56,8 +59,7 @@ const CookieConsentBanner = () => {
       onAccept={handleAccept}
       onDecline={handleDecline}
     >
-      This website uses cookies to ensure you get the best experience on our
-      website.
+      This website uses cookies. See our <a href="/privacy" className="underline">privacy policy</a> for more information.
     </CookieConsent>
   );
 };

@@ -11,16 +11,17 @@ interface Props {
 const Layout = ({ children, transparent = false }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const mainRef = React.useRef<HTMLDivElement>(null);
+
+  const ref = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (mainRef.current) {
-        setScrolled(mainRef.current.scrollTop > 0);
+      if (ref.current) {
+        setScrolled(ref.current.scrollTop > 0);
       }
     };
 
-    const mainElement = mainRef.current;
+    const mainElement = ref.current;
     if (mainElement) {
       mainElement.addEventListener("scroll", handleScroll);
     }
@@ -30,14 +31,10 @@ const Layout = ({ children, transparent = false }: Props) => {
         mainElement.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [mainRef]);
+  }, [ref]);
 
-  // TODO: Check which is the overflowing layout.
   return (
-    <div
-      ref={mainRef}
-      className="relative flex flex-col w-full h-screen transition-colors z-0"
-    >
+    <div className="relative flex flex-col w-full h-screen">
       <Header
         transparent={transparent}
         scrolled={scrolled}
@@ -47,8 +44,10 @@ const Layout = ({ children, transparent = false }: Props) => {
         isSidebarOpen={isSidebarOpen}
         onMenuClick={() => setSidebarOpen(false)}
       />
-      <main>{children}</main>
-      <Footer />
+      <div ref={ref} className="flex-grow overflow-y-auto">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 };
