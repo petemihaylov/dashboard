@@ -1,9 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import { CookieConsentBanner } from "./common";
 import { storeManager } from "./store/store";
-import Router from "./Router";
 import config from "./config/config";
+import Router from "./Router";
 
 const App = () => (
   <Provider store={storeManager.store}>
@@ -25,7 +26,7 @@ const App = () => (
         />
       </Helmet>
     </HelmetProvider>
-
+    <CookieConsentBanner />
     <Router />
   </Provider>
 );

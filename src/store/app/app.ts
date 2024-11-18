@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import authReducer from "./auth/auth-slices";
+import contactReducer from "./contact/contact-slices";
 
 const appReducers = combineReducers({
-  auth: authReducer,
+  contact: contactReducer,
 });
 
 export default appReducers;
