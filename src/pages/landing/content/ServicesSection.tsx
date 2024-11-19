@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { nanoid } from "@reduxjs/toolkit";
 
 const ServicesSection = () => {
   const services = [
@@ -77,7 +78,7 @@ const ServicesSection = () => {
                 <div className="pt-8 px-10 pb-10">
                   <ul className="space-y-2 text-sm text-gray-600">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center">
+                      <li key={nanoid()} className="flex items-center">
                         <svg
                           className="h-5 w-5 text-indigo-600 mr-2"
                           viewBox="0 0 20 20"

@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PageViewLogger from "./common/feedback/PageViewLogger";
 
 const NotFound = lazy(() =>
   import("./common").then((module) => ({
@@ -38,6 +39,7 @@ const GalleryPage = lazy(() =>
 
 const Router = () => (
   <BrowserRouter>
+    <PageViewLogger />
     <Suspense>
       <Routes>
         <Route path="/" element={<LandingPage />} />

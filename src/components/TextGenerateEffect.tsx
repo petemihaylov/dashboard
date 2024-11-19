@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const TextGenerateEffect = ({
   words,
@@ -32,7 +33,7 @@ export const TextGenerateEffect = ({
     <motion.div ref={scope}>
       {wordsArray.map((word) => (
         <motion.span
-          key={word}
+          key={nanoid()}
           className="text-white opacity-0"
           style={{
             filter: filter ? "blur(10px)" : "none",

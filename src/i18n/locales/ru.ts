@@ -15,6 +15,13 @@ export const ru: LanguageTranslation = {
         go_back: "Вернуться назад",
       },
     },
+    cookieConsent: {
+      acceptButton: "Принять",
+      declineButton: "Отклонить",
+      message:
+        "Этот веб-сайт использует файлы cookie. См. нашу <link/> для получения дополнительной информации.",
+      privacyPolicyLink: "политику конфиденциальности",
+    },
   },
 };
 

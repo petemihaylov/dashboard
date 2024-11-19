@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+import { nanoid } from "@reduxjs/toolkit";
 import React from "react";
 
 const PartnersSection = () => {
@@ -61,9 +62,9 @@ const PartnersSection = () => {
             }}
           >
             <div className="scrolling-container">
-              {logos.map((logo, index) => (
+              {logos.map((logo) => (
                 <img
-                  key={`logo-${index}`}
+                  key={nanoid()}
                   alt={logo.alt}
                   src={logo.src}
                   width={158}
@@ -75,9 +76,9 @@ const PartnersSection = () => {
                   }}
                 />
               ))}
-              {logos.map((logo, index) => (
+              {logos.map((logo) => (
                 <img
-                  key={`logo-duplicate-${index}`}
+                  key={nanoid()}
                   alt={logo.alt}
                   src={logo.src}
                   width={158}
