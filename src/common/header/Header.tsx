@@ -138,7 +138,7 @@ const Header = ({
           className="md:hidden absolute right-4 top-5"
           onClick={onMenuClick}
         >
-          <MenuIcon fill={transparent ? "#000" : "#fff"} />
+          <MenuIcon fill={transparent ? "#000" : scrolled ? "#000" : "#fff"} />
         </Button>
       </div>
     </header>

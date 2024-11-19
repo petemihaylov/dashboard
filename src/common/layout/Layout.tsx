@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Sidebar from "../sidebar/Sidebar";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -12,7 +12,7 @@ const Layout = ({ children, transparent = false }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,20 +21,23 @@ const Layout = ({ children, transparent = false }: Props) => {
       }
     };
 
-    const mainElement = ref.current;
-    if (mainElement) {
-      mainElement.addEventListener("scroll", handleScroll);
+    const element = ref.current;
+    if (element) {
+      element.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      if (mainElement) {
-        mainElement.removeEventListener("scroll", handleScroll);
+      if (element) {
+        element.removeEventListener("scroll", handleScroll);
       }
     };
   }, [ref]);
 
   return (
-    <div className="relative flex flex-col w-full h-screen">
+    <div
+      ref={ref}
+      className="relative flex flex-col w-full h-screen overflow-auto"
+    >
       <Header
         transparent={transparent}
         scrolled={scrolled}
@@ -44,10 +47,8 @@ const Layout = ({ children, transparent = false }: Props) => {
         isSidebarOpen={isSidebarOpen}
         onMenuClick={() => setSidebarOpen(false)}
       />
-      <div ref={ref} className="flex-grow overflow-y-auto">
-        <main>{children}</main>
-        <Footer />
-      </div>
+      <main>{children}</main>
+      <Footer />
     </div>
   );
 };
