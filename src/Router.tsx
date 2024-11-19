@@ -10,7 +10,7 @@ const NotFound = lazy(() =>
 
 const LandingPage = lazy(() =>
   import("./pages").then((module) => ({
-    default: module.LandingPage,
+    default: module.HomePage,
   }))
 );
 
@@ -26,11 +26,18 @@ const ContactsPage = lazy(() =>
   }))
 );
 
+const PrivacyPolicyPage = lazy(() =>
+  import("./pages").then((module) => ({
+    default: module.PrivacyPage,
+  }))
+);
+
 const PricesPage = lazy(() =>
   import("./pages").then((module) => ({
     default: module.PricesPage,
   }))
 );
+
 const GalleryPage = lazy(() =>
   import("./pages").then((module) => ({
     default: module.GalleryPage,
@@ -47,6 +54,8 @@ const Router = () => (
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/prices" element={<PricesPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

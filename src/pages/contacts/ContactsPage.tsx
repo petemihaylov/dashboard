@@ -1,11 +1,11 @@
 import React from "react";
-import ContactSection from "./content/ContactSection";
+import ContactsSection from "./content/ContactsSection";
 import { Layout } from "../../common";
 
 const ContactsPage = () => (
   <Layout transparent>
-    <div className="flex min-h-screen items-center justify-center">
-      <ContactSection />
+    <div className="flex items-center justify-center">
+      <ContactsSection />
     </div>
   </Layout>
 );

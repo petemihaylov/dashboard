@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import cn from "classnames";
 import Sidebar from "../sidebar/Sidebar";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -47,7 +48,9 @@ const Layout = ({ children, transparent = false }: Props) => {
         isSidebarOpen={isSidebarOpen}
         onMenuClick={() => setSidebarOpen(false)}
       />
-      <main>{children}</main>
+      <main className={cn("flex flex-col flex-grow", transparent && "mt-16")}>
+        {children}
+      </main>
       <Footer />
     </div>
   );
