@@ -15,6 +15,13 @@ export const nl: LanguageTranslation = {
         go_back: "Ga terug",
       },
     },
+    cookieConsent: {
+      acceptButton: "Accepteren",
+      declineButton: "Weigeren",
+      message:
+        "Deze website maakt gebruik van cookies. Zie onze <link/> voor meer informatie.",
+      privacyPolicyLink: "privacybeleid",
+    },
   },
 };
 

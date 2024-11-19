@@ -10,11 +10,18 @@ export const bg: LanguageTranslation = {
     },
     feedback: {
       not_found: {
-        title: "Страницата не е намерена",
+        title: "Страницата не e намерена",
         description:
           "Съжаляваме, не можахме да намерим страницата, която търсите.",
-        go_back: "Върнете се обратно",
+        go_back: "Върнете ce обратно",
       },
+    },
+    cookieConsent: {
+      acceptButton: "Приемам",
+      declineButton: "Отказвам",
+      message:
+        "Този уебсайт използва бисквитки. Вижте нашата <link/> за повече информация.",
+      privacyPolicyLink: "политика за поверителност",
     },
   },
 };

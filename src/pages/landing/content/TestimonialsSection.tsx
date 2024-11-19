@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@headlessui/react";
 import { motion } from "framer-motion";
+import { nanoid } from "@reduxjs/toolkit";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -28,7 +29,7 @@ const TestimonialsSection = () => {
             {/* <ChevronLeft className="h-4 w-4" /> */}
           </Button>
           <motion.div
-            key={currentTestimonial}
+            key={nanoid()}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}

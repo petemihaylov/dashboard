@@ -1,10 +1,13 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import { initializeAnalytics } from "./utils/analytics";
 import { CookieConsentBanner } from "./common";
 import { storeManager } from "./store/store";
 import config from "./config/config";
 import Router from "./Router";
+
+initializeAnalytics();
 
 const App = () => (
   <Provider store={storeManager.store}>

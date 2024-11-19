@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src *; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' ws://localhost:*; img-src * 'self' data: https:;"
+      content="default-src *; script-src 'self' https://www.googletagmanager.com 'nonce-673c999d'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' ws://localhost:* https://www.google-analytics.com https://region1.google-analytics.com; img-src * 'self' data: https:;"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,6 +13,21 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
       media="all"
     />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+      nonce="673c999d"
+    ></script>
+    <script nonce="673c999d">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX"); // Replace G-XXXXXXXXXX with your GA4 Measurement ID
+    </script>
   </head>
   <body>
     <div id="root"></div>

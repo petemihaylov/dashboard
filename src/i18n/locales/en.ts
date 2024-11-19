@@ -16,6 +16,13 @@ export const en = {
         go_back: "Go back",
       },
     },
+    cookieConsent: {
+      acceptButton: "Accept",
+      declineButton: "Decline",
+      message:
+        "This website uses cookies. See our <link/> for more information.",
+      privacyPolicyLink: "privacy policy",
+    },
   },
 };
 

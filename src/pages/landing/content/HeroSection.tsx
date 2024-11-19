@@ -30,13 +30,13 @@ const HeroSection = () => {
           <h1 className="sm:text-5xl text-3xl font-bold tracking-tighter lg:text-7xl">
             <TextGenerateEffect duration={2} filter={false} words={headline} />
           </h1>
-          <p className="mt-6 sm:text-xl text-sm">
+          <div className="mt-6 sm:text-xl text-sm">
             <TextGenerateEffect
               duration={2}
               filter={false}
               words={subheadline}
             />
-          </p>
+          </div>
           <div className="mt-10 flex gap-4">
             <Button className="hover:text-white text-gray-300 block w-[8rem] rounded bg-indigo-600 px-3.5 h-[2.5rem]">
               Contact Us
