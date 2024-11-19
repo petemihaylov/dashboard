@@ -1,6 +1,5 @@
-/* eslint-disable react/no-array-index-key */
-import { nanoid } from "@reduxjs/toolkit";
 import React from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 const PartnersSection = () => {
   const logos = [

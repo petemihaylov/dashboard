@@ -22,6 +22,20 @@ export const ru: LanguageTranslation = {
         "Этот веб-сайт использует файлы cookie. См. нашу <link/> для получения дополнительной информации.",
       privacyPolicyLink: "политику конфиденциальности",
     },
+    contact: {
+      contactTitle: "Свяжитесь c нами",
+      contactSubtitle:
+        "Пожалуйста, укажите свои данные, и мы свяжемся c вами в ближайшее время.",
+      fullName: "Полное имя",
+      email: "Электронная почта",
+      phoneNumber: "Номер телефона",
+      message: "Сообщение",
+      agreeToPolicies: "Выбирая это, вы соглашаетесь c нашей",
+      privacyPolicyLink: "политикой конфиденциальности <link/>",
+      submitButton: "Связаться",
+      alertSuccess: "Ваше сообщение успешно отправлено",
+      alertError: "Вы должны согласиться c политикой конфиденциальности",
+    },
   },
 };
 

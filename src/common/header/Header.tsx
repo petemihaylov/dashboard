@@ -72,7 +72,7 @@ const Header = ({
           {items.map((item) => (
             <Button
               key={item.name}
-              className={cn("text-base", textClassName)}
+              className={cn("text-sm", textClassName)}
               onClick={() => navigate(item.link)}
             >
               {t(item.name)}

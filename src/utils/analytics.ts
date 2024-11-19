@@ -76,7 +76,7 @@ export const updateConsent = (consent: "granted" | "denied") => {
 export const isConsentGranted = (): boolean =>
   Cookies.get("user_consent") === "accepted";
 
-/**
+/*
  * Sets the user's consent decision and updates Google Analytics.
  * @param consent - 'accepted' or 'declined'
  */
