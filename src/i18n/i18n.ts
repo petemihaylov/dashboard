@@ -22,7 +22,7 @@ const resources = {
   ru,
 };
 
-const savedLanguage = localStorage.getItem("lang") || bgMetadata.code;
+const savedLanguage = localStorage.getItem("lang") || enMetadata.code;
 
 i18n
   .use(initReactI18next)
@@ -31,7 +31,7 @@ i18n
   .init({
     resources,
     lng: savedLanguage,
-    fallbackLng: bgMetadata.code,
+    fallbackLng: enMetadata.code,
     interpolation: {
       escapeValue: false,
     },
