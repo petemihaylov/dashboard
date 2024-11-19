@@ -64,7 +64,7 @@ const ServicesSection = () => {
               <div className="relative flex h-full flex-col border hover:shadow cursor-pointer overflow-hidden rounded-xl">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                   <div className="flex gap-3">
-                    <span className="mb-3 inline-block rounded-md bg-gray-200 px-2 py-1 font-mono text-sm font-bold text-gray-500">
+                    <span className="mb-3 inline-block rounded bg-gray-200 px-2 py-1 font-mono text-sm font-bold text-gray-500">
                       0{service.id}
                     </span>
                     <h3 className="text-xl font-semibold text-gray-900">

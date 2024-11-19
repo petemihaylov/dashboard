@@ -23,6 +23,20 @@ export const bg: LanguageTranslation = {
         "Този уебсайт използва бисквитки. Вижте нашата <link/> за повече информация.",
       privacyPolicyLink: "политика за поверителност",
     },
+    contact: {
+      contactTitle: "Свържете ce c нас",
+      contactSubtitle:
+        "Моля, предоставете вашите данни и ние ще ce свържем c вас скоро.",
+      fullName: "Пълно име",
+      email: "Имейл",
+      phoneNumber: "Телефонен номер",
+      message: "Съобщение",
+      agreeToPolicies: "C избора на това, вие ce съгласявате c нашата <link/>",
+      privacyPolicyLink: "политика за поверителност",
+      submitButton: "Нека поговорим",
+      alertSuccess: "Вашето съобщение беше изпратено успешно",
+      alertError: "Трябва да ce съгласите c политиката за поверителност",
+    },
   },
 };
 

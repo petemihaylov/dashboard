@@ -23,6 +23,20 @@ export const en = {
         "This website uses cookies. See our <link/> for more information.",
       privacyPolicyLink: "privacy policy",
     },
+    contact: {
+      contactTitle: "Contact us",
+      contactSubtitle:
+        "Please provide your details and we will get back to you shortly.",
+      fullName: "Full name",
+      email: "Email",
+      phoneNumber: "Phone number",
+      message: "Message",
+      agreeToPolicies: "By selecting this, you agree to our <link/>",
+      privacyPolicyLink: "privacy policy",
+      submitButton: "Let's Talk",
+      alertSuccess: "Your message has been sent successfully",
+      alertError: "You must agree to the privacy policy",
+    },
   },
 };
 

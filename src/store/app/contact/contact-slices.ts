@@ -1,5 +1,4 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { submitContactForm } from "./contact-thunk";
 import { RootState } from "../..";
 import { Status } from "../../../types/status";
