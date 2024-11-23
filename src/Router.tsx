@@ -52,7 +52,7 @@ const Router = () => (
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="/prices" element={<PricesPage />} />
+        <Route path="/services" element={<PricesPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
 
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
