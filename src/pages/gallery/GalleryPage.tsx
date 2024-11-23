@@ -14,7 +14,7 @@ const GalleryPage = () => {
 
   // Pass the cards array to the LayoutGrid component
   return (
-    <Layout>
+    <Layout transparent>
       <div className="min-h-screen bg-neutral-50">
         <div className="max-w-7xl mt-10 mx-auto px-4 py-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
