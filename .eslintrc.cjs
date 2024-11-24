@@ -79,6 +79,12 @@ module.exports = {
     "jsx-a11y/control-has-associated-label": "off",
     quotes: ["error", "double"], // Enforce double quotes
     "jsx-quotes": ["error", "prefer-double"], // Enforce double quotes in JSX
+
+    // Prevent React from being removed as unused
+    "no-unused-vars": ["warn", { varsIgnorePattern: "^React$" }],
+
+    // Disable the rule that checks for React being in scope for JSX
+    "react/react-in-jsx-scope": "off", // React 17+ JSX transform allows JSX without import React
   },
   settings: {
     "import/resolver": {
