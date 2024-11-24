@@ -1,7 +1,7 @@
 import React from "react";
 import { GalleryGrid } from "./content/GalleryGrid";
 import { Layout } from "../../common";
-import { cards } from "./__mocks__/mockImages";
+import { cards } from "./__mocks__/images";
 
 const GalleryPage = () => (
   <Layout transparent>
@@ -11,7 +11,7 @@ const GalleryPage = () => (
           Scuba Diving Gallery
         </h1>
         <p className="text-gray-600 mb-10">
-          Discover the mesmerizing underwater world
+          Discover the mesmerizing underwater world through our lenses.
         </p>
         <GalleryGrid cards={cards} />
       </div>
