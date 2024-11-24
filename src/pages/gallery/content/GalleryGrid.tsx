@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "@headlessui/react";
 
 export type Card = {
   id: number;
@@ -57,13 +58,13 @@ const SelectedCard = ({
       className="relative max-w-5xl w-full bg-white rounded overflow-hidden shadow-2xl"
       onClick={(e) => e.stopPropagation()}
     >
-      <button
+      <Button
         type="submit"
         onClick={onClose}
-        className="absolute  bg-red top-4 right-4 z-10 px-1 pt-1 rounded bg-white/90  hover:bg-white transition-all duration-200 shadow-lg"
+        className="absolute  bg-red top-4 right-4 z-10 px-1 pt-1 rounded bg-white/90 hover:bg-white transition-all duration-200 shadow-lg"
       >
         <FontAwesomeIcon icon={faTimes} className="w-6 h-6 text-gray-800" />
-      </button>
+      </Button>
       <div className="relative">
         <img
           src={selected.thumbnail}
@@ -86,7 +87,7 @@ const SelectedCard = ({
   </motion.div>
 );
 
-export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
+export const GalleryGrid = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
 
   return (
