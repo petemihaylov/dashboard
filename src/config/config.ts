@@ -4,8 +4,8 @@ const appConfigJson = {
   app: {
     name: "Diving Center Arapya",
     icon: {
-      light: "assets/svgs/app-icon-light.svg",
-      dark: "assets/svgs/app-icon-dark.svg",
+      light: "app/light-icon.svg",
+      dark: "app/dark-icon.svg",
     },
   },
 };
