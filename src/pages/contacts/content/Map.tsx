@@ -15,6 +15,8 @@ const Map = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   const [map, setMap] = useState<google.maps.Map | null>(null);
 
+  const googleApiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+
   const onLoad = useCallback((gmap: google.maps.Map) => {
     setMap(gmap);
   }, []);
@@ -24,7 +26,7 @@ const Map = () => {
   }, []);
 
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+    <LoadScript googleMapsApiKey={googleApiKey}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
