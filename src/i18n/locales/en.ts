@@ -37,6 +37,16 @@ export const en = {
       alertSuccess: "Your message has been sent successfully",
       alertError: "You must agree to the privacy policy",
     },
+    footer: {
+      contact_us: "Contact Us",
+      working_hours: "Working Hours",
+      contacts: "Contacts",
+      prices: "Prices",
+      partners: "Partners",
+      get_in_touch: "Get in Touch",
+      follow_us: "Follow Us",
+      copyright: "© 2024 Diving Center Arapya. All rights reserved.",
+    },
   },
 };
 

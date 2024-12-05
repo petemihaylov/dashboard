@@ -37,6 +37,16 @@ export const bg: LanguageTranslation = {
       alertSuccess: "Вашето съобщение беше изпратено успешно",
       alertError: "Трябва да ce съгласите c политиката за поверителност",
     },
+    footer: {
+      contact_us: "Свържете ce c нас",
+      working_hours: "Работно време",
+      contacts: "Контакти",
+      prices: "Цени",
+      partners: "Партньори",
+      get_in_touch: "Свържете ce c нас",
+      follow_us: "Последвайте ни",
+      copyright: "© 2024 Водолазен център Арапя. Всички права запазени.",
+    },
   },
 };
 
