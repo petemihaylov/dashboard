@@ -1,11 +1,14 @@
 import React from "react";
 import { HiPhone, HiEnvelope } from "react-icons/hi2";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Button } from "@headlessui/react";
 import config from "../../config/config";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <footer className="bg-gray-100 py-12">
@@ -13,11 +16,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0">
           {/* Logo Section */}
           <div className="flex justify-center col-span-1">
-            <img
-              src={config.app.icon.light}
-              alt={config.app.name}
-              className="sm:h-[2rem] sm:w-[2rem] h-[1.3rem] w-[1.3rem] opacity-90"
-            />
+            <Button onClick={() => navigate("/")}>
+              <img
+                src={config.app.icon.light}
+                alt={config.app.name}
+                className="sm:h-[2rem] sm:w-[2rem] h-[1.3rem] w-[1.3rem] opacity-90"
+              />
+            </Button>
           </div>
 
           {/* Main Content */}

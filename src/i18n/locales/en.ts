@@ -3,10 +3,20 @@ import { LanguageMetadata } from "../types";
 export const en = {
   translation: {
     header: {
-      services: "Services",
+      prices: "Services",
       gallery: "Gallery",
       testimonials: "Testimonials",
       contacts: "Contacts",
+    },
+    footer: {
+      contact_us: "Contact Us",
+      working_hours: "Working Hours",
+      contacts: "Contacts",
+      prices: "Prices",
+      partners: "Partners",
+      get_in_touch: "Get in Touch",
+      follow_us: "Follow Us",
+      copyright: "© 2024 Diving Center Arapya. All rights reserved.",
     },
     feedback: {
       not_found: {
@@ -36,16 +46,6 @@ export const en = {
       submitButton: "Let's Talk",
       alertSuccess: "Your message has been sent successfully",
       alertError: "You must agree to the privacy policy",
-    },
-    footer: {
-      contact_us: "Contact Us",
-      working_hours: "Working Hours",
-      contacts: "Contacts",
-      prices: "Prices",
-      partners: "Partners",
-      get_in_touch: "Get in Touch",
-      follow_us: "Follow Us",
-      copyright: "© 2024 Diving Center Arapya. All rights reserved.",
     },
   },
 };

@@ -11,13 +11,13 @@ export interface CourseProps {
   image: string;
 }
 
-export const CourseCard: React.FC<CourseProps> = ({
+export const CourseCard = ({
   title,
   location,
   date,
   price,
   image,
-}) => (
+}: CourseProps) => (
   <motion.div
     className="mx-auto max-w-sm h-[400px] rounded overflow-hidden group cursor-pointer bg-white shadow-xl"
     whileHover={{ y: -5 }}

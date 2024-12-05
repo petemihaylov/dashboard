@@ -3,10 +3,20 @@ import { LanguageMetadata, LanguageTranslation } from "../types";
 export const bg: LanguageTranslation = {
   translation: {
     header: {
-      services: "Услуги",
+      prices: "Услуги",
       gallery: "Галерия",
       testimonials: "Отзиви",
       contacts: "Контакти",
+    },
+    footer: {
+      contact_us: "Свържете ce c нас",
+      working_hours: "Работно време",
+      contacts: "Контакти",
+      prices: "Цени",
+      partners: "Партньори",
+      get_in_touch: "Свържете ce c нас",
+      follow_us: "Последвайте ни",
+      copyright: "© 2024 Водолазен център Арапя. Всички права запазени.",
     },
     feedback: {
       not_found: {
@@ -36,16 +46,6 @@ export const bg: LanguageTranslation = {
       submitButton: "Нека поговорим",
       alertSuccess: "Вашето съобщение беше изпратено успешно",
       alertError: "Трябва да ce съгласите c политиката за поверителност",
-    },
-    footer: {
-      contact_us: "Свържете ce c нас",
-      working_hours: "Работно време",
-      contacts: "Контакти",
-      prices: "Цени",
-      partners: "Партньори",
-      get_in_touch: "Свържете ce c нас",
-      follow_us: "Последвайте ни",
-      copyright: "© 2024 Водолазен център Арапя. Всички права запазени.",
     },
   },
 };

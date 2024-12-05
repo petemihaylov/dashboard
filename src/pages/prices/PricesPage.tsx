@@ -1,5 +1,5 @@
 import React from "react";
-import PriceTable from "../../components/PriceTable";
+import Table from "../../components/Table";
 import { Layout } from "../../common";
 
 const TOURIST_PRICES = [
@@ -65,51 +65,47 @@ const PADI_COURSES = [
 
 const PricesPage = () => (
   <Layout>
-    <div className="min-h-screen bg-gradient-to-b from-[#396afc] via-[#396afc]  to-[#396afc] py-12 px-4">
-      <div className="max-w-6xl mx-auto space-y-14 mt-20">
-        <PriceTable
-          title="Prices for Tourists"
-          data={TOURIST_PRICES}
-          columns={[
-            { header: "Activity", key: "activity" },
-            {
-              header: "Price",
-              key: "price",
-              render: (item) => `${item.price} EUR`,
-            },
-          ]}
-        />
-        <PriceTable
-          title="Prices for Certified Divers"
-          data={CERTIFIED_DIVER_PRICES}
-          columns={[
-            { header: "Activity", key: "activity" },
-            {
-              header: "Price",
-              key: "price",
-              render: (item) =>
-                item.additionalCost
-                  ? `+${item.price} EUR`
-                  : `${item.price} EUR`,
-            },
-          ]}
-        />
-        <PriceTable
-          title="PADI Courses"
-          data={PADI_COURSES}
-          columns={[
-            { header: "Course", key: "course" },
-            {
-              header: "Price",
-              key: "price",
-              render: (item) =>
-                typeof item.price === "number"
-                  ? `${item.price}${item.additionalFee ? ` + ${item.additionalFee}*` : ""} EUR`
-                  : item.price,
-            },
-          ]}
-        />
-      </div>
+    <div className="container mx-auto space-y-14 my-10 px-4 lg:px-8">
+      <Table
+        title="Prices for Tourists"
+        data={TOURIST_PRICES}
+        columns={[
+          { header: "Activity", key: "activity" },
+          {
+            header: "Price",
+            key: "price",
+            render: (item) => `${item.price} EUR`,
+          },
+        ]}
+      />
+      <Table
+        title="Prices for Certified Divers"
+        data={CERTIFIED_DIVER_PRICES}
+        columns={[
+          { header: "Activity", key: "activity" },
+          {
+            header: "Price",
+            key: "price",
+            render: (item) =>
+              item.additionalCost ? `+${item.price} EUR` : `${item.price} EUR`,
+          },
+        ]}
+      />
+      <Table
+        title="PADI Courses"
+        data={PADI_COURSES}
+        columns={[
+          { header: "Course", key: "course" },
+          {
+            header: "Price",
+            key: "price",
+            render: (item) =>
+              typeof item.price === "number"
+                ? `${item.price}${item.additionalFee ? ` + ${item.additionalFee}*` : ""} EUR`
+                : item.price,
+          },
+        ]}
+      />
     </div>
   </Layout>
 );

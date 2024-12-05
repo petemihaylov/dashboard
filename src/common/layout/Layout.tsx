@@ -5,11 +5,11 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
 interface Props {
-  transparent?: boolean;
+  scrollable?: boolean;
   children?: React.ReactNode | React.ReactNode[];
 }
 
-const Layout = ({ children, transparent = false }: Props) => {
+const Layout = ({ children, scrollable }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -40,7 +40,7 @@ const Layout = ({ children, transparent = false }: Props) => {
       className="relative flex flex-col w-full h-screen overflow-auto"
     >
       <Header
-        transparent={transparent}
+        scrollable={scrollable}
         scrolled={scrolled}
         onMenuClick={() => setSidebarOpen(!isSidebarOpen)}
       />
@@ -48,7 +48,7 @@ const Layout = ({ children, transparent = false }: Props) => {
         isSidebarOpen={isSidebarOpen}
         onMenuClick={() => setSidebarOpen(false)}
       />
-      <main className={cn("flex flex-col flex-grow", transparent && "mt-16")}>
+      <main className={cn("flex flex-col flex-grow", !scrollable && "mt-16")}>
         {children}
       </main>
       <Footer />

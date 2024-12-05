@@ -5,11 +5,11 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { nanoid } from "@reduxjs/toolkit";
 import { CourseCard, CourseProps } from "./CourseCard";
 
 const courses: CourseProps[] = [
   {
-    id: 1,
     title: "CMAS Advanced",
     location: "Arapya",
     date: "September 25",
@@ -18,7 +18,6 @@ const courses: CourseProps[] = [
       "https://images.unsplash.com/photo-1682687981974-c5ef2111640c?auto=format&fit=crop&q=80&w=600&h=600",
   },
   {
-    id: 2,
     title: "Open Water Diver",
     location: "Blue Lagoon",
     date: "October 5",
@@ -27,7 +26,6 @@ const courses: CourseProps[] = [
       "https://images.unsplash.com/photo-1682687982501-1e58ab814714?auto=format&fit=crop&q=80&w=600&h=600",
   },
   {
-    id: 3,
     title: "Rescue Diver",
     location: "Coral Bay",
     date: "October 15",
@@ -36,7 +34,6 @@ const courses: CourseProps[] = [
       "https://images.unsplash.com/photo-1682687982501-1e58ab814714?auto=format&fit=crop&q=80&w=600&h=600",
   },
   {
-    id: 4,
     title: "Night Diving",
     location: "Deep Blue",
     date: "October 20",
@@ -88,26 +85,9 @@ const DotIndicator = ({
   />
 );
 
-export const CoursesCarousel: React.FC = () => {
+const CoursesCarousel = () => {
   const [currentIndex, setCurrentIndex] = React.useState(courses.length);
   const [isAnimating, setIsAnimating] = React.useState(false);
-
-  const handleSlideChange = (newIndex: number) => {
-    setIsAnimating(true);
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    if (!isAnimating) {
-      handleSlideChange(currentIndex + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (!isAnimating) {
-      handleSlideChange(currentIndex - 1);
-    }
-  };
 
   useEffect(() => {
     if (currentIndex <= courses.length - 1) {
@@ -127,6 +107,23 @@ export const CoursesCarousel: React.FC = () => {
 
   const visibleIndex =
     ((currentIndex % courses.length) + courses.length) % courses.length;
+
+  const handleSlideChange = (newIndex: number) => {
+    setIsAnimating(true);
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    if (!isAnimating) {
+      handleSlideChange(currentIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (!isAnimating) {
+      handleSlideChange(currentIndex - 1);
+    }
+  };
 
   return (
     <div className="py-24 bg-gradient-to-b from-[#0a2041] to-[#554ce6] relative">
@@ -157,7 +154,7 @@ export const CoursesCarousel: React.FC = () => {
               >
                 {infiniteScroll.map((course, index) => (
                   <motion.div
-                    key={course.id}
+                    key={nanoid()}
                     className="flex-shrink-0 w-1/3"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -178,7 +175,7 @@ export const CoursesCarousel: React.FC = () => {
           >
             {courses.map((course, index) => (
               <DotIndicator
-                key={course.id}
+                key={nanoid()}
                 active={visibleIndex === index}
                 onClick={() =>
                   !isAnimating && handleSlideChange(index + courses.length)
@@ -191,3 +188,5 @@ export const CoursesCarousel: React.FC = () => {
     </div>
   );
 };
+
+export default CoursesCarousel;

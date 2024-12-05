@@ -16,38 +16,38 @@ import config from "../../config/config";
 import MenuIcon from "../../assets/icons/MenuIcon";
 
 interface Props {
-  transparent: boolean;
-  scrolled: boolean;
+  scrollable?: boolean;
+  scrolled?: boolean;
   onMenuClick: () => void;
 }
 
 const Header = ({
   onMenuClick,
-  transparent = false,
+  scrollable = false,
   scrolled = false,
 }: Props) => {
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
 
   const items = [
-    { name: "header.services", link: "/services" },
+    { name: "header.prices", link: "/prices" },
     { name: "header.gallery", link: "/gallery" },
     { name: "header.testimonials", link: "/testimonials" },
     { name: "header.contacts", link: "/contacts" },
   ];
 
   // Determine the appropriate text color and image source
-  const textClassName = transparent
-    ? "text-gray-600 hover:text-black"
-    : scrolled
+  const textClassName = scrollable
+    ? scrolled
       ? "text-gray-600 hover:text-black"
-      : "text-gray-300 hover:text-white";
+      : "text-gray-300 hover:text-white"
+    : "text-gray-600 hover:text-black";
 
-  const iconSrc = transparent
-    ? config.app.icon.light
-    : scrolled
+  const iconSrc = scrollable
+    ? scrolled
       ? config.app.icon.light
-      : config.app.icon.dark;
+      : config.app.icon.dark
+    : config.app.icon.light;
 
   return (
     <header
@@ -138,7 +138,7 @@ const Header = ({
           className="md:hidden absolute right-4 top-5"
           onClick={onMenuClick}
         >
-          <MenuIcon fill={transparent ? "#000" : scrolled ? "#000" : "#fff"} />
+          <MenuIcon fill={scrollable ? (scrolled ? "#000" : "#fff") : "#000"} />
         </Button>
       </div>
     </header>

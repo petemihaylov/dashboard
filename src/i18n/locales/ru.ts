@@ -3,10 +3,20 @@ import { LanguageMetadata, LanguageTranslation } from "../types";
 export const ru: LanguageTranslation = {
   translation: {
     header: {
-      services: "Услуги",
+      prices: "Услуги",
       gallery: "Галерея",
       testimonials: "Отзывы",
       contacts: "Контакты",
+    },
+    footer: {
+      contact_us: "Свяжитесь c нами",
+      working_hours: "Часы работы",
+      contacts: "Контакты",
+      prices: "Цены",
+      partners: "Партнеры",
+      get_in_touch: "Связаться",
+      follow_us: "Следите за нами",
+      copyright: "© 2024 Diving Center Arapya. Bce права защищены.",
     },
     feedback: {
       not_found: {
@@ -35,16 +45,6 @@ export const ru: LanguageTranslation = {
       submitButton: "Связаться",
       alertSuccess: "Ваше сообщение успешно отправлено",
       alertError: "Вы должны согласиться c политикой конфиденциальности",
-    },
-    footer: {
-      contact_us: "Свяжитесь c нами",
-      working_hours: "Часы работы",
-      contacts: "Контакты",
-      prices: "Цены",
-      partners: "Партнеры",
-      get_in_touch: "Связаться",
-      follow_us: "Следите за нами",
-      copyright: "© 2024 Diving Center Arapya. Bce права защищены.",
     },
   },
 };

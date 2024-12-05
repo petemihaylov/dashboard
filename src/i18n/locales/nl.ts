@@ -3,10 +3,20 @@ import { LanguageMetadata, LanguageTranslation } from "../types";
 export const nl: LanguageTranslation = {
   translation: {
     header: {
-      services: "Diensten",
+      prices: "Diensten",
       gallery: "Galerij",
       testimonials: "Getuigenissen",
       contacts: "Contacten",
+    },
+    footer: {
+      contact_us: "Neem contact met ons op",
+      working_hours: "Werkuren",
+      contacts: "Contacten",
+      prices: "Prijzen",
+      partners: "Partners",
+      get_in_touch: "Neem contact op",
+      follow_us: "Volg ons",
+      copyright: "© 2024 Duikcentrum Arapya. Alle rechten voorbehouden.",
     },
     feedback: {
       not_found: {
@@ -35,16 +45,6 @@ export const nl: LanguageTranslation = {
       submitButton: "Laten we praten",
       alertSuccess: "Uw bericht is succesvol verzonden",
       alertError: "U moet akkoord gaan met het privacybeleid",
-    },
-    footer: {
-      contact_us: "Neem contact met ons op",
-      working_hours: "Werkuren",
-      contacts: "Contacten",
-      prices: "Prijzen",
-      partners: "Partners",
-      get_in_touch: "Neem contact op",
-      follow_us: "Volg ons",
-      copyright: "© 2024 Duikcentrum Arapya. Alle rechten voorbehouden.",
     },
   },
 };
