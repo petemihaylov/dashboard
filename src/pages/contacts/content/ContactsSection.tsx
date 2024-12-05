@@ -62,10 +62,10 @@ const ContactsSection = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-6 lg:px-8">
+    <div className="lg:container mx-auto py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form Section */}
-        <section id="contact" className="isolate bg-white pt-12 pb-24">
+        <section id="contact" className="isolate bg-white">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
               {t("contact.contactTitle")}
@@ -152,7 +152,7 @@ const ContactsSection = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full min-h-[6rem] max-h-[18rem] rounded border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                    className="block w-full min-h-[10rem] max-h-[18rem] rounded border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                   />
                 </div>
               </div>

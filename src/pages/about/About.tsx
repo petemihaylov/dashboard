@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../../common";
 
 const AboutPage = () => (
-  <Layout transparent>
+  <Layout>
     <div className="flex flex-col items-start justify-start px-6 md:px-16 my-12 mx-auto max-w-4xl">
       <h1 className="text-2xl font-bold mb-6 text-start text-gray-800 md:text-3xl">
         About us
