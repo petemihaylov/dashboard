@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +18,7 @@ export const CourseCard = ({
   image,
 }: CourseProps) => (
   <motion.div
-    className="mx-auto max-w-sm h-[400px] rounded overflow-hidden group cursor-pointer bg-white shadow-xl"
+    className="mx-auto h-[400px] sm:h-[350px] md:h-[400px] rounded overflow-hidden group cursor-pointer bg-white shadow-xl"
     whileHover={{ y: -5 }}
     transition={{ duration: 0.2 }}
   >

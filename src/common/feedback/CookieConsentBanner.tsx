@@ -1,4 +1,3 @@
-import React from "react";
 import CookieConsent from "react-cookie-consent";
 import { Trans, useTranslation } from "react-i18next";
 import { setConsent } from "../../utils/analytics";

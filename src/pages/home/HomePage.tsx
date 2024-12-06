@@ -1,16 +1,15 @@
-import React from "react";
 import { Layout } from "../../common";
 import HeroSection from "./content/HeroSection";
-import BentoSection from "./content/BentoSection";
+import BentoSection from "./content/features/BentoSection";
 import NewsletterSection from "./content/NewsletterSection";
 import ServicesSection from "./content/ServicesSection";
-import CoursesCarousel from "./content/CoursesCarousel";
+import CoursesSection from "./content/courses/CoursesSection";
 
 const LandingPage = () => (
   <Layout scrollable>
     <HeroSection />
     <ServicesSection />
-    <CoursesCarousel />
+    <CoursesSection />
     <BentoSection />
     {/* <PartnersSection /> */}
     <NewsletterSection />

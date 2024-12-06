@@ -1,4 +1,3 @@
-import React from "react";
 import ContactsSection from "./content/ContactsSection";
 import { Layout } from "../../common";
 
