@@ -1,6 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
 import cn from "classnames";
-import React from "react";
 
 interface Renderable {
   [key: string]: string | number | boolean | React.ReactNode;

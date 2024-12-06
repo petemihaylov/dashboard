@@ -1,4 +1,3 @@
-import React from "react";
 import { Provider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { initializeAnalytics } from "./utils/analytics";

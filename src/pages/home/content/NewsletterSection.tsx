@@ -1,4 +1,3 @@
-import React from "react";
 import { VscCalendar } from "react-icons/vsc";
 
 import { HiOutlineHandRaised } from "react-icons/hi2";

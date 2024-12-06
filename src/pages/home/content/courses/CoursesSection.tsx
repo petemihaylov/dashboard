@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { nanoid } from "@reduxjs/toolkit";
+import { motion } from "framer-motion";
 import { CourseCard, CourseProps } from "./CourseCard";
+import DotIndicator from "./DotIndicator";
+import NavigationButton from "./NavigationButton";
 
 const courses: CourseProps[] = [
   {
@@ -44,51 +41,29 @@ const courses: CourseProps[] = [
 ];
 
 // Double the courses array for infinite scroll effect
-const infiniteScroll = [...courses, ...courses, ...courses];
+const infiniteScroll = [...courses, ...courses, ...courses, ...courses];
 
-const NavigationButton = ({
-  direction,
-  onClick,
-}: {
-  direction: "left" | "right";
-  onClick: () => void;
-}) => (
-  <motion.button
-    initial={{ opacity: 0.6 }}
-    whileHover={{ opacity: 1, scale: 1.1 }}
-    className={`absolute top-1/2 ${direction === "left" ? "left-4" : "right-4"} 
-    bg-red/10 backdrop-blur-md text-white p-4 rounded-full 
-    hover:bg-white/20 transition-colors duration-200 z-10`}
-    onClick={onClick}
-  >
-    <FontAwesomeIcon
-      icon={direction === "left" ? faChevronLeft : faChevronRight}
-      className="w-6 h-6"
-    />
-  </motion.button>
-);
-
-const DotIndicator = ({
-  active,
-  onClick,
-}: {
-  active: boolean;
-  onClick: () => void;
-}) => (
-  <motion.button
-    className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-      active ? "bg-white scale-150" : "bg-white/30"
-    }`}
-    whileHover={{ scale: 1.5 }}
-    whileTap={{ scale: 1 }}
-    onClick={onClick}
-  />
-);
-
-const CoursesCarousel = () => {
+const CoursesSection = () => {
   const [currentIndex, setCurrentIndex] = React.useState(courses.length);
   const [isAnimating, setIsAnimating] = React.useState(false);
 
+  // Calculate the visible index for the current slide
+  const modIndex = currentIndex % courses.length;
+  const visibleIndex = (modIndex + courses.length) % courses.length;
+
+  // Preload images to avoid flickering
+  const preloadImages = (crs: CourseProps[]) => {
+    crs.forEach((cr) => {
+      const img = new Image();
+      img.src = cr.image;
+    });
+  };
+
+  useEffect(() => {
+    preloadImages(courses);
+  }, []);
+
+  // Handle infinite scroll effect
   useEffect(() => {
     if (currentIndex <= courses.length - 1) {
       setTimeout(() => {
@@ -104,9 +79,6 @@ const CoursesCarousel = () => {
       setTimeout(() => setIsAnimating(false), 300);
     }
   }, [currentIndex]);
-
-  const visibleIndex =
-    ((currentIndex % courses.length) + courses.length) % courses.length;
 
   const handleSlideChange = (newIndex: number) => {
     setIsAnimating(true);
@@ -141,21 +113,24 @@ const CoursesCarousel = () => {
 
         <div className="relative px-10">
           <div className="flex justify-between items-center w-full">
-            <NavigationButton direction="left" onClick={prevSlide} />
-            <NavigationButton direction="right" onClick={nextSlide} />
-
-            <div className="overflow-hidden relative w-[60%] backdrop-blur-md max-w-[90rem] mx-auto rounded-lg">
+            <div className="overflow-hidden relative w-full backdrop-blur-md max-w-[90rem] mx-auto rounded-lg">
               <motion.div
                 className="flex"
                 animate={{
                   x: `calc(-${currentIndex * (100 / 5)}% - ${currentIndex * 1.5}rem)`,
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30,
+                  staggerChildren: 0.1,
+                }}
               >
                 {infiniteScroll.map((course, index) => (
                   <motion.div
+                    layout
                     key={nanoid()}
-                    className="flex-shrink-0 w-1/3"
+                    className="flex-shrink-0 px-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -165,6 +140,9 @@ const CoursesCarousel = () => {
                 ))}
               </motion.div>
             </div>
+
+            <NavigationButton direction="left" onClick={prevSlide} />
+            <NavigationButton direction="right" onClick={nextSlide} />
           </div>
 
           <motion.div
@@ -173,7 +151,7 @@ const CoursesCarousel = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            {courses.map((course, index) => (
+            {courses.map((_, index) => (
               <DotIndicator
                 key={nanoid()}
                 active={visibleIndex === index}
@@ -189,4 +167,4 @@ const CoursesCarousel = () => {
   );
 };
 
-export default CoursesCarousel;
+export default CoursesSection;

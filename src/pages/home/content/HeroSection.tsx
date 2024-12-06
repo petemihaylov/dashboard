@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@headlessui/react";
 import { TextGenerateEffect } from "../../../components/TextGenerateEffect";

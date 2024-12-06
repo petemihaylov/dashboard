@@ -1,4 +1,3 @@
-import React from "react";
 import { GalleryGrid } from "./content/GalleryGrid";
 import { Layout } from "../../common";
 import { cards } from "./__mocks__/images";

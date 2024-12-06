@@ -1,4 +1,3 @@
-import React from "react";
 import { HiPhone, HiEnvelope } from "react-icons/hi2";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
