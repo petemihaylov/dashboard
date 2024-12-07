@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IconProps } from "../../types/icon";
+import { IconProps } from "../types/icon";
 
 const MenuIcon = ({
   size = "24",
