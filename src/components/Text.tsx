@@ -4,17 +4,16 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { nanoid } from "@reduxjs/toolkit";
 
-export const TextGenerateEffect = ({
-  words,
-  filter = true,
-  duration = 1,
-}: {
+interface Props {
   words: string;
   filter?: boolean;
   duration?: number;
-}) => {
+}
+
+export const Text = ({ words, filter = true, duration = 1 }: Props) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
+
   useEffect(() => {
     animate(
       "span",
@@ -29,26 +28,22 @@ export const TextGenerateEffect = ({
     );
   }, [duration, filter, animate]);
 
-  const renderWords = () => (
-    <motion.div ref={scope}>
-      {wordsArray.map((word) => (
-        <motion.span
-          key={nanoid()}
-          className="text-white opacity-0"
-          style={{
-            filter: filter ? "blur(10px)" : "none",
-          }}
-        >
-          {word}{" "}
-        </motion.span>
-      ))}
-    </motion.div>
-  );
-
   return (
     <div className="mt-4">
       <div className="text-white leading-snug tracking-wide">
-        {renderWords()}
+        <motion.div ref={scope}>
+          {wordsArray.map((word) => (
+            <motion.span
+              key={nanoid()}
+              className="text-white opacity-0"
+              style={{
+                filter: filter ? "blur(10px)" : "none",
+              }}
+            >
+              {word}{" "}
+            </motion.span>
+          ))}
+        </motion.div>
       </div>
     </div>
   );

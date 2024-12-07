@@ -1,4 +1,4 @@
-import { Layout } from "../../common";
+import { Layout } from "../../layout";
 import HeroSection from "./content/HeroSection";
 import BentoSection from "./content/features/BentoSection";
 import NewsletterSection from "./content/NewsletterSection";

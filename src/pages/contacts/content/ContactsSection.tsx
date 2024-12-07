@@ -10,7 +10,7 @@ import {
   setInitialState,
 } from "../../../store/app/contact/contact-slices";
 import Map from "./Map";
-import LoadingIcon from "../../../assets/icons/LoadingIcon";
+import LoadingIcon from "../../../components/icons/LoadingIcon";
 
 const ContactsSection = () => {
   const { t } = useTranslation();

@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PageViewLogger from "./common/feedback/PageViewLogger";
+import PageViewLogger from "./layout/feedback/PageViewLogger";
 
 const NotFound = lazy(() =>
-  import("./common").then((module) => ({
+  import("./layout").then((module) => ({
     default: module.NotFound,
   }))
 );

@@ -1,5 +1,5 @@
 import Table from "../../components/Table";
-import { Layout } from "../../common";
+import { Layout } from "../../layout";
 
 const TOURIST_PRICES = [
   {

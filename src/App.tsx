@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { initializeAnalytics } from "./utils/analytics";
-import { CookieConsentBanner } from "./common";
+import { CookieConsentBanner } from "./layout";
 import { storeManager } from "./store/store";
 import config from "./config/config";
 import Router from "./Router";

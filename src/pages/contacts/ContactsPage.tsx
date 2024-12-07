@@ -1,5 +1,5 @@
 import ContactsSection from "./content/ContactsSection";
-import { Layout } from "../../common";
+import { Layout } from "../../layout";
 
 const ContactsPage = () => (
   <Layout>
