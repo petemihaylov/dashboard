@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { GalleryGrid } from "./content/GalleryGrid";
-import { Layout } from "../../common";
+import { Layout } from "../../layout";
 
 export type Card = {
   className: string;

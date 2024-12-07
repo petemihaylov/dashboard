@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { motion } from "framer-motion";
-import { CourseCard } from "./CourseCard";
+import CourseCard from "./CourseCard";
 import DotIndicator from "./DotIndicator";
-import NavigationButton from "./NavigationButton";
+import NavigationButton from "../../../../components/buttons/NavigationButton";
 
 export type Course = {
   title: string;
@@ -49,7 +49,7 @@ const courses: Course[] = [
 ];
 
 // Double the courses array for infinite scroll effect
-const infiniteScroll = [...courses, ...courses, ...courses, ...courses];
+const scrollCourses = [...courses, ...courses, ...courses, ...courses];
 
 const CoursesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(courses.length);
@@ -78,7 +78,7 @@ const CoursesSection = () => {
         setIsAnimating(false);
         setCurrentIndex(currentIndex + courses.length);
       }, 0);
-    } else if (currentIndex >= infiniteScroll.length - courses.length) {
+    } else if (currentIndex >= scrollCourses.length - courses.length) {
       setTimeout(() => {
         setIsAnimating(false);
         setCurrentIndex(currentIndex - courses.length);
@@ -134,7 +134,7 @@ const CoursesSection = () => {
                   staggerChildren: 0.1,
                 }}
               >
-                {infiniteScroll.map((course, index) => (
+                {scrollCourses.map((course, index) => (
                   <motion.div
                     layout
                     key={nanoid()}
@@ -143,7 +143,7 @@ const CoursesSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <CourseCard {...course} />
+                    <CourseCard course={course} />
                   </motion.div>
                 ))}
               </motion.div>

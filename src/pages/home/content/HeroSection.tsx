@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@headlessui/react";
-import { TextGenerateEffect } from "../../../components/TextGenerateEffect";
+import { Text } from "../../../components/Text";
 
 const HeroSection = () => (
   <motion.section
@@ -23,14 +23,14 @@ const HeroSection = () => (
         transition={{ delay: 0.5, duration: 0.8 }}
       >
         <h1 className="sm:text-5xl text-3xl font-bold tracking-tighter lg:text-7xl">
-          <TextGenerateEffect
+          <Text
             duration={2}
             filter={false}
             words="Dive Into Your Next Adventure"
           />
         </h1>
         <div className="mt-6 sm:text-xl text-sm">
-          <TextGenerateEffect
+          <Text
             duration={2}
             filter={false}
             words="Experience the wonders of the underwater world with expert-led scuba diving tours and courses."

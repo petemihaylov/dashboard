@@ -1,5 +1,4 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { VscClose } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { Button } from "@headlessui/react";
 import { Card } from "../GalleryPage";
@@ -28,9 +27,9 @@ const SelectedCard = ({ selected, onClose }: Props) => (
       <Button
         type="submit"
         onClick={onClose}
-        className="absolute  bg-red top-4 right-4 z-10 px-1 pt-1 rounded bg-white/90 hover:bg-white transition-all duration-200 shadow-lg"
+        className="absolute top-4 right-4 z-10 rounded bg-white/50 hover:bg-white transition-all duration-200 shadow-lg"
       >
-        <FontAwesomeIcon icon={faTimes} className="w-6 h-6 text-gray-800" />
+        <VscClose className="w-6 h-6 text-gray-800" />
       </Button>
       <div className="relative">
         <img
