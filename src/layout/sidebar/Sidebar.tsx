@@ -11,7 +11,7 @@ import {
 } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import MenuIcon from "../../components/icons/MenuIcon";
+import MenuIcon from "../../icons/MenuIcon";
 import { languages } from "../../i18n/i18n";
 
 interface Props {

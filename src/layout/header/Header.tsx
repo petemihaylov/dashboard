@@ -13,7 +13,7 @@ import {
 import { VscGlobe } from "react-icons/vsc";
 import { languages } from "../../i18n/i18n";
 import config from "../../config/config";
-import MenuIcon from "../../components/icons/MenuIcon";
+import MenuIcon from "../../icons/MenuIcon";
 
 interface Props {
   scrollable?: boolean;
