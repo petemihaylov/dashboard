@@ -1,11 +1,19 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { motion } from "framer-motion";
-import { CourseCard, CourseProps } from "./CourseCard";
+import { CourseCard } from "./CourseCard";
 import DotIndicator from "./DotIndicator";
 import NavigationButton from "./NavigationButton";
 
-const courses: CourseProps[] = [
+export type Course = {
+  title: string;
+  location: string;
+  date: string;
+  price: number;
+  image: string;
+};
+
+const courses: Course[] = [
   {
     title: "CMAS Advanced",
     location: "Arapya",
@@ -44,18 +52,18 @@ const courses: CourseProps[] = [
 const infiniteScroll = [...courses, ...courses, ...courses, ...courses];
 
 const CoursesSection = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(courses.length);
-  const [isAnimating, setIsAnimating] = React.useState(false);
+  const [currentIndex, setCurrentIndex] = useState(courses.length);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Calculate the visible index for the current slide
   const modIndex = currentIndex % courses.length;
   const visibleIndex = (modIndex + courses.length) % courses.length;
 
   // Preload images to avoid flickering
-  const preloadImages = (crs: CourseProps[]) => {
-    crs.forEach((cr) => {
+  const preloadImages = (crs: Course[]) => {
+    crs.forEach((c) => {
       const img = new Image();
-      img.src = cr.image;
+      img.src = c.image;
     });
   };
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Button, Input, Switch, Textarea } from "@headlessui/react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";

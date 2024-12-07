@@ -1,28 +1,46 @@
 import { nanoid } from "@reduxjs/toolkit";
+import { useEffect } from "react";
+
+export type Logo = {
+  alt: string;
+  src: string;
+};
+
+const logos: Logo[] = [
+  {
+    alt: "Aqua Lung",
+    src: "https://cdn.worldvectorlogo.com/logos/aqua-lung-4.svg",
+  },
+  {
+    alt: "Suunto",
+    src: "https://www.sportgardena.com/media/image/77/0b/95/suunto.png",
+  },
+  {
+    alt: "Technisub",
+    src: "https://alboomkuwait.com/wp-content/uploads/2020/01/technisub-logo.png",
+  },
+  {
+    alt: "Mares",
+    src: "https://upload.wikimedia.org/wikipedia/commons/2/22/Mares_logo.svg",
+  },
+  {
+    alt: "Oceanic",
+    src: "https://www.oceanicworldwide.com/wp-content/uploads/sites/6/2024/08/oceanic-logo.png",
+  },
+];
 
 const PartnersSection = () => {
-  const logos = [
-    {
-      alt: "Aqua Lung",
-      src: "https://cdn.worldvectorlogo.com/logos/aqua-lung-4.svg",
-    },
-    {
-      alt: "Suunto",
-      src: "https://www.sportgardena.com/media/image/77/0b/95/suunto.png",
-    },
-    {
-      alt: "Technisub",
-      src: "https://alboomkuwait.com/wp-content/uploads/2020/01/technisub-logo.png",
-    },
-    {
-      alt: "Mares",
-      src: "https://upload.wikimedia.org/wikipedia/commons/2/22/Mares_logo.svg",
-    },
-    {
-      alt: "Oceanic",
-      src: "https://www.oceanicworldwide.com/wp-content/uploads/sites/6/2024/08/oceanic-logo.png",
-    },
-  ];
+  // Preload images to avoid flickering
+  const preloadImages = (ls: Logo[]) => {
+    ls.forEach((l) => {
+      const img = new Image();
+      img.src = l.src;
+    });
+  };
+
+  useEffect(() => {
+    preloadImages(logos);
+  }, []);
 
   return (
     <>
