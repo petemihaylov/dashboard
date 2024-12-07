@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void;
 }
 
-const NavigationButton = ({ direction, onClick }: Props) => (
+const ArrowButton = ({ direction, onClick }: Props) => (
   <motion.button
     initial={{ opacity: 0.6 }}
     whileHover={{ opacity: 1, scale: 1.1 }}
@@ -26,4 +26,4 @@ const NavigationButton = ({ direction, onClick }: Props) => (
   </motion.button>
 );
 
-export default NavigationButton;
+export default ArrowButton;

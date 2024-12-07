@@ -3,7 +3,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { motion } from "framer-motion";
 import CourseCard from "./CourseCard";
 import DotIndicator from "./DotIndicator";
-import NavigationButton from "../../../../components/buttons/NavigationButton";
+import ArrowButton from "../../../../components/buttons/ArrowButton";
 
 export type Course = {
   title: string;
@@ -149,8 +149,8 @@ const CoursesSection = () => {
               </motion.div>
             </div>
 
-            <NavigationButton direction="left" onClick={prevSlide} />
-            <NavigationButton direction="right" onClick={nextSlide} />
+            <ArrowButton direction="left" onClick={prevSlide} />
+            <ArrowButton direction="right" onClick={nextSlide} />
           </div>
 
           <motion.div
