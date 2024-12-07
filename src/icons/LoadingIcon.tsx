@@ -1,6 +1,6 @@
 import * as React from "react";
 import cn from "classnames";
-import { IconProps } from "../../types/icon";
+import { IconProps } from "../types/icon";
 
 const LoadingIcon = ({
   size = "24",
