@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import cn from "classnames";
 import { VscGlobe } from "react-icons/vsc";
 import {
@@ -14,10 +14,10 @@ import { useNavigate } from "react-router-dom";
 import MenuIcon from "../../assets/icons/MenuIcon";
 import { languages } from "../../i18n/i18n";
 
-type Props = {
+interface Props {
   onMenuClick: () => void;
   isSidebarOpen: boolean;
-};
+}
 
 const Sidebar = ({ onMenuClick, isSidebarOpen }: Props) => {
   const navigate = useNavigate();

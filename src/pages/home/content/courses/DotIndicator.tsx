@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import cn from "classnames";
 
-interface DotIndicatorProps {
+interface Props {
   active: boolean;
   onClick: () => void;
 }
 
-const DotIndicator = ({ active, onClick }: DotIndicatorProps) => (
+const DotIndicator = ({ active, onClick }: Props) => (
   <motion.button
     className={cn(
       "w-2 h-2 rounded-full transition-colors duration-200",

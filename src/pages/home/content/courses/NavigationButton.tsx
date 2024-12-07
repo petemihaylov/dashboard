@@ -6,13 +6,12 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const NavigationButton = ({
-  direction,
-  onClick,
-}: {
+interface Props {
   direction: "left" | "right";
   onClick: () => void;
-}) => (
+}
+
+const NavigationButton = ({ direction, onClick }: Props) => (
   <motion.button
     initial={{ opacity: 0.6 }}
     whileHover={{ opacity: 1, scale: 1.1 }}

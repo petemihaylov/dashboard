@@ -1,22 +1,9 @@
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Course } from "./CoursesSection";
 
-export interface CourseProps {
-  title: string;
-  location: string;
-  date: string;
-  price: number;
-  image: string;
-}
-
-export const CourseCard = ({
-  title,
-  location,
-  date,
-  price,
-  image,
-}: CourseProps) => (
+export const CourseCard = ({ title, location, date, price, image }: Course) => (
   <motion.div
     className="mx-auto h-[400px] sm:h-[350px] md:h-[400px] rounded overflow-hidden group cursor-pointer bg-white shadow-xl"
     whileHover={{ y: -5 }}

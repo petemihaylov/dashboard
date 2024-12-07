@@ -1,5 +1,4 @@
 import { VscCalendar } from "react-icons/vsc";
-
 import { HiOutlineHandRaised } from "react-icons/hi2";
 
 const NewsletterSection = () => (
